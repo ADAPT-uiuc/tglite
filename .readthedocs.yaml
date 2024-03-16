@@ -14,10 +14,12 @@ build:
     # rust: "1.70"
     # golang: "1.20"
   commands:
+    - conda create -n env python=3.7
+    - conda activate env
     - pip install torch==1.12.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
     - pip install torch-scatter==2.1.0+pt112cu116 -f https://data.pyg.org/whl/torch-1.12.1+cu116.html
     - python setup.py install
-    # Install Docusaurus dependencies
+    # Install dependencies
     - cd docs/ && pip install -r requirements.txt
     # Build the site
     - cd docs/ && make html
