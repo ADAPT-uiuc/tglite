@@ -14,13 +14,7 @@ keywords = [
   "machine learning", "TGNN"
 ]
 classifiers = [
-<<<<<<< HEAD
-  "Development Status :: 3 - Alpha",
-  "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: Apache Software License",
-=======
   "Development Status :: 4 - Beta",
->>>>>>> f6ee3c807c3e7e35e44c678b20ec0ced72eb32da
   "Intended Audience :: Developers",
   "Intended Audience :: Science/Research",
   "License :: OSI Approved :: Apache Software License",
