@@ -18,6 +18,10 @@ build:
     - pip install torch==1.12.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
     - pip install torch-scatter==2.1.0+pt112cu116 -f https://data.pyg.org/whl/torch-1.12.1+cu116.html
     - python3 -m pip install .
+    - mkdir _readthedocs
+    - cd docs
+    - make html
+    - mv build/html ../_readthedocs/
 
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:
