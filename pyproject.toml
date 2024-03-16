@@ -26,7 +26,6 @@ dependencies = [
   "torch>=1.12.1",
   "torch-scatter>=2.1.0",
 ]
-license = {text = "Apache License (2.0)"}
 
 [project.optional-dependencies]
 dev = ["sphinx"]
