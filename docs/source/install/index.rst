@@ -9,14 +9,16 @@ Installing on Linux
 Prerequisites
 ^^^^^^^^^^^^^
 
-python3.7 or later
-
-gcc6.1 or later
-
-pip
+* python 3.7 or later
+* gcc 6.1 or later
+* pip
+* torch 1.12.1 or later
+* torch-scatter 2.1.0 or later
 
 Installation
 ^^^^^^^^^^^^
+Ensure at least PyTorch 1.12.1 and torch-scatter 2.1.0 are installed (refer to `PyTorch <https://pytorch.org/get-started/locally/>`_ and `torch-scatter <https://pypi.org/project/torch-scatter/>`_ for installation instructions), simply run
+
 .. code-block:: console
 
    $ pip install tglite
@@ -32,7 +34,7 @@ To verify the installation, run the following in Python:
    
 Building from source
 `````````````````````
-To install the latest TGLite code for testing or development on the core, you will need to build TGlite from source.
+To install the latest TGLite code for testing or development on the core, you will need to build TGlite from source. Here, we show how to build TGLite with Python 3.7, PyTorch 1.12.1 and torch-scatter 2.1.0.
 
 Create and activate a python environment:
 
@@ -59,8 +61,7 @@ Then install the package locally:
 
 .. code-block:: console
    
-   $ python -m pip install --upgrade build
-   $ python -m pip install .
+   $ python setup.py install
 
 This will build the C++ extension (which requires C++14 and OpenMP), install
 the rest of the dependencies (as listed in `pyproject.toml`), and then install
@@ -71,11 +72,11 @@ Development Mode
 
 Development mode allows easily editing the code without having to re-install
 the package. However, this only applies to the python code. When editing the
-C++ extension code, it needs to be re-compiled again. Use `--editable` option of pip’s install sub-command:
+C++ extension code, it needs to be re-compiled again. Use `develop` instead of `install` to use dev mode:
 
 .. code-block:: console
 
-   $ python -m pip install --editable .
+   $ python setup.py develop
 
 
 Running Tests
@@ -93,7 +94,7 @@ using the `pytest` utility.
 
    # re-enable dev mode install
    $ pip uninstall -y tglite
-   $ python -m pip install --editable .
+   $ python setup.py develop
 
    # run with test coverage report
    $ pytest --cov=tglite
@@ -118,4 +119,15 @@ Use the scripts in `examples/exp` as a starting point, e.g.:
    $ ./exp/tgat.sh --data-path . -d wiki --epochs 3
 
 
+Building this document locally
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+   # install doc dependencies
+   $ pip install '.[docs]'
 
+   # build docs
+   $ cd docs
+   $ make html
+   
+   # launch in browser
+   $ sh run.sh
