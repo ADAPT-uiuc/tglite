@@ -106,6 +106,7 @@ Inside the `examples <https://github.com/ADAPT-uiuc/tglite/tree/main/examples>`_
 To run these example models, install the additional dependencies and download the datasets:
 
 .. code-block:: console
+
    $ cd examples
    $ pip install -r requirements.txt # or "conda install -c conda-forge pandas scikit-learn" using conda
    $ ./download-data.sh
@@ -116,12 +117,14 @@ This will download the datasets inside `examples/data/`, one can also download d
 Use the scripts in `examples/exp` as a starting point, e.g.:
 
 .. code-block:: console
+
    $ ./exp/tgat.sh --data-path . -d wiki --epochs 3
 
 
 Building this document locally
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
+   
    # install doc dependencies
    $ pip install '.[docs]'
 

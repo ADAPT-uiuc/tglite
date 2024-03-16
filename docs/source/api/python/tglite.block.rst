@@ -27,7 +27,7 @@ to sampled neighbors' TBlock.
 
 
 Query TBlock attributes
-----------------------
+-----------------------
 .. autosummary::
    :toctree: ../../generated/
 

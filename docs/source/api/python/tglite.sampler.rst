@@ -1,7 +1,7 @@
 .. _api-sampler:
 
 tglite.TSampler
-=============
+===============
 .. currentmodule:: tglite
 .. autoclass:: TSampler
 

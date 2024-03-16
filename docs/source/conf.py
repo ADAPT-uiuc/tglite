@@ -10,16 +10,18 @@
 import pathlib
 import sys
 import os
+import site
 sys.path.insert(0, pathlib.Path(__file__).parents[2].resolve().as_posix())
 sys.path.insert(0, os.path.abspath("../../python"))
+sys.path.insert(0, site.getsitepackages()[0])
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'TGLite'
-copyright = '2023, ADAPT Group'
+copyright = '2024, ADAPT Group'
 author = 'ADAPT Group'
-release = '0.0.1'
+release = '0.1.0'
 
 
 # -- General configuration ---------------------------------------------------
