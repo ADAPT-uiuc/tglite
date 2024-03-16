@@ -22,7 +22,7 @@ build:
     # Install dependencies
     - cd docs/ && pip install -r requirements.txt
     # Build the site
-    - cd docs/ && make html
+    # - cd docs/ && make html
     # Copy generated files into Read the Docs directory
     - mkdir --parents _readthedocs/html/
     - cp --recursive docs/build/* _readthedocs/html/
