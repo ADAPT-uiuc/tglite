@@ -10,7 +10,7 @@ build:
   tools:
     python: "mambaforge-22.9"
 
-  commands:
+  # commands:
     # - python setup.py install
     # Install dependencies
     # - cd docs/ && pip install -r requirements.txt
