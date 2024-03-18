@@ -167,8 +167,11 @@
 <h1>Welcome to TGLite’s documentation!<a class="headerlink" href="#welcome-to-tglite-s-documentation" title="Permalink to this heading">¶</a></h1>
 <p><strong>TGlite</strong> is a lightweight framework that provides core abstractions and building blocks for practitioners and researchers to implement efficient TGNN models. <em>TGNNs</em>, or <em>Temporal Graph Neural Networks</em>, learn node embeddings for graphs that dynamically change over time by jointly aggregating structural and temporal information from neighboring nodes.</p>
 <p>TGLite employs an abstraction called a <cite>TBlock</cite> to represent the temporal graph dependencies when aggregating from neighbors, with explicit support for capturing temporal details like edge timestamps, as well as composable operators and optimizations. Compared to prior art, TGLite can outperform the <a class="reference external" href="https://github.com/amazon-science/tgl">TGL</a> framework by up to <a class="reference external" href="some-url">3x</a> in terms of training time.</p>
-<figure class="align-center" id="train-figure" style="width: 85%">
-<img alt="End-to-end training epoch time comparison on an Nvidia A100 GPU" src="_images/train.png" />
+<figure class="align-center" id="id1" style="width: 85%">
+<span id="train-figure"></span><img alt="End-to-end training epoch time comparison on an Nvidia A100 GPU" src="_images/train.png" />
+<figcaption>
+<p><span class="caption-text">End-to-end training epoch time comparison on an Nvidia A100 GPU</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
 </figure>
 <section id="install-tglite">
 <h2>Install TGLite<a class="headerlink" href="#install-tglite" title="Permalink to this heading">¶</a></h2>

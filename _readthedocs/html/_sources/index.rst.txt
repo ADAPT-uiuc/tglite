@@ -16,7 +16,7 @@ TGLite employs an abstraction called a `TBlock` to represent the temporal graph 
    :align: center
    :figwidth: 85 %
 
-   ..
+   End-to-end training epoch time comparison on an Nvidia A100 GPU
 
 Install TGLite
 --------------
