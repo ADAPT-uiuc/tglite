@@ -19,7 +19,7 @@ build:
     # - cd docs/ && make html
     # Copy generated files into Read the Docs directory
     - cd docs/ && ls
-    - cd docs/html && ls
+    - cd docs/build && ls
     - mkdir _readthedocs
     - cp --recursive docs/build/html _readthedocs/
 
