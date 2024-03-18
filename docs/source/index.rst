@@ -16,6 +16,8 @@ TGLite employs an abstraction called a `TBlock` to represent the temporal graph 
    :align: center
    :figwidth: 85 %
 
+   End-to-end training epoch time comparison on an Nvidia A100 GPU
+
 Install TGLite
 --------------
 See :ref:`Getting started <getting-started>` for instructions on how to install the TGLite binaries. To install from source or for local development, refer to :ref:`Building from source <build-from-source>` and :ref:`Development mode <development-mode>`.

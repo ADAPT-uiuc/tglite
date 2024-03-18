@@ -12,17 +12,16 @@ Prerequisites
 ^^^^^^^^^^^^^
 
 .. list-table:: 
-   :widths: 50 50 50 50
-   :header-rows: 1
+   :widths: 25 25 25 25
 
-   * - python
-     - gcc
-     - torch
-     - torch-scatter
-   * - 3.7 or later
-     - 6.1 or later
-     - 1.12.1 or later
-     - 2.1.0 or later
+   * - **python**
+     - **gcc**
+     - **torch**
+     - **torch-scatter**
+   * - ≥ 3.7
+     - ≥ 6.1
+     - ≥ 1.12.1
+     - ≥ 2.1.0
 
 .. * python 3.7 or later
 .. * gcc 6.1 or later
