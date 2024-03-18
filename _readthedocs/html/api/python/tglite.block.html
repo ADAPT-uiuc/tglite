@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tglite.TBlock &mdash; TGLite 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="tglite.TBlock.g" href="../../generated/tglite.TBlock.g.html" />
+    <link rel="prev" title="tglite.TBatch.split_data" href="../../generated/tglite.TBatch.split_data.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> TGLite
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">TGLite</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/TGAT.html">Quickstart</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">TGLite Module</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tglite.html">tglite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.batch.html">tglite.TBatch</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tglite.TBlock</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tglite.TBlock"><code class="docutils literal notranslate"><span class="pre">TBlock</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tglite.TBlock.__init__"><code class="docutils literal notranslate"><span class="pre">TBlock.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#query-tblock-attributes">Query TBlock attributes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.g.html">tglite.TBlock.g</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.layer.html">tglite.TBlock.layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.dstnodes.html">tglite.TBlock.dstnodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.dsttimes.html">tglite.TBlock.dsttimes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.num_dst.html">tglite.TBlock.num_dst</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#query-neighbor-attributes">Query neighbor attributes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.dstindex.html">tglite.TBlock.dstindex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.srcnodes.html">tglite.TBlock.srcnodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.num_src.html">tglite.TBlock.num_src</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.eid.html">tglite.TBlock.eid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.ets.html">tglite.TBlock.ets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.num_edges.html">tglite.TBlock.num_edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.has_nbrs.html">tglite.TBlock.has_nbrs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#query-data">Query data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.dstdata.html">tglite.TBlock.dstdata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.srcdata.html">tglite.TBlock.srcdata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.edata.html">tglite.TBlock.edata</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#query-cache">Query Cache</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.allnodes.html">tglite.TBlock.allnodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.uniq_src.html">tglite.TBlock.uniq_src</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.efeat.html">tglite.TBlock.efeat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.nfeat.html">tglite.TBlock.nfeat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.srcfeat.html">tglite.TBlock.srcfeat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.dstfeat.html">tglite.TBlock.dstfeat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.mem_data.html">tglite.TBlock.mem_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.mail.html">tglite.TBlock.mail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.time_deltas.html">tglite.TBlock.time_deltas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#neighbor-ops">Neighbor ops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.set_nbrs.html">tglite.TBlock.set_nbrs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.clear_nbrs.html">tglite.TBlock.clear_nbrs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#linked-list-ops">Linked list ops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.prev.html">tglite.TBlock.prev</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.next.html">tglite.TBlock.next</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.next_block.html">tglite.TBlock.next_block</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#execution-ops">Execution ops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.apply.html">tglite.TBlock.apply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.register_hook.html">tglite.TBlock.register_hook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.run_hooks.html">tglite.TBlock.run_hooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBlock.clear_hooks.html">tglite.TBlock.clear_hooks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.context.html">tglite.TContext</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.graph.html">tglite.TGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.sampler.html">tglite.TSampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.Mailbox.html">tglite.Mailbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.Memory.html">tglite.Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.nn.html">tglite.nn</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">TGLite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>tglite.TBlock</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/api/python/tglite.block.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="tglite-tblock">
+<span id="api-block"></span><h1>tglite.TBlock<a class="headerlink" href="#tglite-tblock" title="Permalink to this heading">¶</a></h1>
+<p>TBlock captures 1-hop relationships between node/time pairs and their neighbors for doing computations. <a class="reference internal" href="#tblock-figure"><span class="std std-ref">Figure</span></a> shows the internal structure of a TBlock and the doubly-linked list design with next and prev pointing
+to sampled neighbors’ TBlock.</p>
+<figure class="align-center" id="id1" style="width: 60%">
+<span id="tblock-figure"></span><img alt="tblock-structure" src="../../_images/tblock-structure.png" />
+<figcaption>
+<p><span class="caption-text">Diagram of the doubly-linked list design and internal structure of a TBlock (destination node-time is denoted as
+&lt;i,t&gt;).</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<dl class="py class">
+<dt class="sig sig-object py" id="tglite.TBlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tglite.</span></span><span class="sig-name descname"><span class="pre">TBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="tglite.context.html#tglite.TContext" title="tglite.TContext"><span class="pre">TContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dstnodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">np.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsttimes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">np.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dstindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">np.ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srcnodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">np.ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">np.ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">np.ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tglite.TBlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Captures 1-hop relations between node/time pairs and their neighbors for doing computations, such as segmented
+softmax and message-passing aggregation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tglite.TBlock.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="tglite.context.html#tglite.TContext" title="tglite.TContext"><span class="pre">TContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dstnodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">np.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsttimes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">np.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dstindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">np.ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srcnodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">np.ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">np.ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">np.ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tglite.TBlock.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal constructor for creating a TBlock.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctx</strong> (<a class="reference internal" href="tglite.context.html#tglite.TContext" title="tglite.TContext"><em>TContext</em></a>) – The TContext.</p></li>
+<li><p><strong>layer</strong> (<em>int</em>) – The layer in the GNN.</p></li>
+<li><p><strong>dstnodes</strong> (<em>np.ndarray</em>) – The destination nodes.</p></li>
+<li><p><strong>dstindex</strong> (<em>np.ndarray</em>) – The indices of destination nodes in dstnodes.</p></li>
+<li><p><strong>srcnodes</strong> (<em>np.ndarray</em>) – The source nodes of the edges.</p></li>
+<li><p><strong>eid</strong> (<em>np.ndarray</em>) – The edge indices.</p></li>
+<li><p><strong>ets</strong> (<em>np.ndarray</em>) – The edge timestamps.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<section id="query-tblock-attributes">
+<h2>Query TBlock attributes<a class="headerlink" href="#query-tblock-attributes" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.g.html#tglite.TBlock.g" title="tglite.TBlock.g"><code class="xref py py-obj docutils literal notranslate"><span class="pre">g</span></code></a></p></td>
+<td><p>Returns the TGraph associated with this TBlock.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.layer.html#tglite.TBlock.layer" title="tglite.TBlock.layer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">layer</span></code></a></p></td>
+<td><p>Returns the GNN layer to which this TBlock belongs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.dstnodes.html#tglite.TBlock.dstnodes" title="tglite.TBlock.dstnodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dstnodes</span></code></a></p></td>
+<td><p>Returns the full destination nodes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.dsttimes.html#tglite.TBlock.dsttimes" title="tglite.TBlock.dsttimes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dsttimes</span></code></a></p></td>
+<td><p>Returns the destination node timestamps.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.num_dst.html#tglite.TBlock.num_dst" title="tglite.TBlock.num_dst"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_dst</span></code></a>()</p></td>
+<td><p>Returns the length of destination node array.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="query-neighbor-attributes">
+<h2>Query neighbor attributes<a class="headerlink" href="#query-neighbor-attributes" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.dstindex.html#tglite.TBlock.dstindex" title="tglite.TBlock.dstindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dstindex</span></code></a></p></td>
+<td><p>Returns the indices of destination nodes in self.dstnodes() that are used for sampling.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.srcnodes.html#tglite.TBlock.srcnodes" title="tglite.TBlock.srcnodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">srcnodes</span></code></a></p></td>
+<td><p>Return the source nodes (temporally sampled neighbors).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.num_src.html#tglite.TBlock.num_src" title="tglite.TBlock.num_src"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_src</span></code></a>()</p></td>
+<td><p>Returns the length of source node array when self.has_nbrs() is True.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.eid.html#tglite.TBlock.eid" title="tglite.TBlock.eid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eid</span></code></a></p></td>
+<td><p>Returns the edge indices, which are connections towards sampled neighbors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.ets.html#tglite.TBlock.ets" title="tglite.TBlock.ets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ets</span></code></a></p></td>
+<td><p>Returns the edge timestamps.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.num_edges.html#tglite.TBlock.num_edges" title="tglite.TBlock.num_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_edges</span></code></a>()</p></td>
+<td><p>Returns the number of edges in the block when self.has_nbrs() is True.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.has_nbrs.html#tglite.TBlock.has_nbrs" title="tglite.TBlock.has_nbrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_nbrs</span></code></a>()</p></td>
+<td><p>Returns True when the block has the neighbor attributes, including dstindex, srcnodes, eid and ets.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="query-data">
+<h2>Query data<a class="headerlink" href="#query-data" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.dstdata.html#tglite.TBlock.dstdata" title="tglite.TBlock.dstdata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dstdata</span></code></a></p></td>
+<td><p>Returns the destination node data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.srcdata.html#tglite.TBlock.srcdata" title="tglite.TBlock.srcdata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">srcdata</span></code></a></p></td>
+<td><p>Returns the source node data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.edata.html#tglite.TBlock.edata" title="tglite.TBlock.edata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edata</span></code></a></p></td>
+<td><p>Returns the edge data.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="query-cache">
+<h2>Query Cache<a class="headerlink" href="#query-cache" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.allnodes.html#tglite.TBlock.allnodes" title="tglite.TBlock.allnodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">allnodes</span></code></a>()</p></td>
+<td><p>Returns a tensor containing the destination nodes concatenated with the source nodes (if available) in pre-defined TGraph's storage device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.uniq_src.html#tglite.TBlock.uniq_src" title="tglite.TBlock.uniq_src"><code class="xref py py-obj docutils literal notranslate"><span class="pre">uniq_src</span></code></a>()</p></td>
+<td><p>Returns a Tensor tuple: (the unique source node indices, the indices of the unique array that reconstructs the source node array) in pre-defined TGraph's storage device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.efeat.html#tglite.TBlock.efeat" title="tglite.TBlock.efeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">efeat</span></code></a>()</p></td>
+<td><p>Returns the edge features in TGraph's computation device, always use pinned memory if possible.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.nfeat.html#tglite.TBlock.nfeat" title="tglite.TBlock.nfeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nfeat</span></code></a>()</p></td>
+<td><p>Returns the node features in TGraph's computation device, always use pinned memory if possible.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.srcfeat.html#tglite.TBlock.srcfeat" title="tglite.TBlock.srcfeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">srcfeat</span></code></a>()</p></td>
+<td><p>Returns the source node features in TGraph's computation device, always use pinned memory if possible.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.dstfeat.html#tglite.TBlock.dstfeat" title="tglite.TBlock.dstfeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dstfeat</span></code></a>()</p></td>
+<td><p>Returns the destination node features in TGraph's computation device, always use pinned memory if possible.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.mem_data.html#tglite.TBlock.mem_data" title="tglite.TBlock.mem_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mem_data</span></code></a>()</p></td>
+<td><p>Returns node memory in TGraph's computation device, always use pinned memory if possible.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.mail.html#tglite.TBlock.mail" title="tglite.TBlock.mail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mail</span></code></a>()</p></td>
+<td><p>Returns the node mails in TGraph's computation device, always use pinned memory if possible.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.time_deltas.html#tglite.TBlock.time_deltas" title="tglite.TBlock.time_deltas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_deltas</span></code></a>()</p></td>
+<td><p>Computes the timestamp differences between destination nodes (used for sampling) and edges and returns them as a tensor in pre-defined TGraph's computation device.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="neighbor-ops">
+<h2>Neighbor ops<a class="headerlink" href="#neighbor-ops" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.set_nbrs.html#tglite.TBlock.set_nbrs" title="tglite.TBlock.set_nbrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_nbrs</span></code></a>(dstindex, srcnodes, eid, ets)</p></td>
+<td><p>Sets the neighbor attributes for the block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.clear_nbrs.html#tglite.TBlock.clear_nbrs" title="tglite.TBlock.clear_nbrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_nbrs</span></code></a>()</p></td>
+<td><p>Clears the neighbor attributes and related cache.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="linked-list-ops">
+<h2>Linked list ops<a class="headerlink" href="#linked-list-ops" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.prev.html#tglite.TBlock.prev" title="tglite.TBlock.prev"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prev</span></code></a></p></td>
+<td><p>Returns the previous TBlock.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.next.html#tglite.TBlock.next" title="tglite.TBlock.next"><code class="xref py py-obj docutils literal notranslate"><span class="pre">next</span></code></a></p></td>
+<td><p>Returns the next TBlock.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.next_block.html#tglite.TBlock.next_block" title="tglite.TBlock.next_block"><code class="xref py py-obj docutils literal notranslate"><span class="pre">next_block</span></code></a>([include_dst, use_dst_times])</p></td>
+<td><p>Generates the next TBlock with neighbor information.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="execution-ops">
+<h2>Execution ops<a class="headerlink" href="#execution-ops" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.apply.html#tglite.TBlock.apply" title="tglite.TBlock.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(fn[, need_nbrs, run_hooks])</p></td>
+<td><p>Applies an operator to the block itself and returns the output.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.register_hook.html#tglite.TBlock.register_hook" title="tglite.TBlock.register_hook"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_hook</span></code></a>(hook)</p></td>
+<td><p>Registers a hook for running post-processing.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.run_hooks.html#tglite.TBlock.run_hooks" title="tglite.TBlock.run_hooks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_hooks</span></code></a>(input)</p></td>
+<td><p>Runs registered hooks on the input tensor in reversed order.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBlock.clear_hooks.html#tglite.TBlock.clear_hooks" title="tglite.TBlock.clear_hooks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_hooks</span></code></a>()</p></td>
+<td><p>Clears all the hooks.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../generated/tglite.TBlock.g.html" class="btn btn-neutral float-right" title="tglite.TBlock.g" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../generated/tglite.TBatch.split_data.html" class="btn btn-neutral float-left" title="tglite.TBatch.split_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2024, ADAPT Group
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

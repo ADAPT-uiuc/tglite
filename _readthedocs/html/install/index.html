@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; TGLite 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quickstart" href="../tutorial/TGAT.html" />
+    <link rel="prev" title="Welcome to TGLite’s documentation!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> TGLite
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">TGLite</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-on-linux">Installing on Linux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verification">Verification</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#building-from-source">Building from source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#development-mode">Development Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-tests">Running Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-examples">Running Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-this-document-locally">Building this document locally</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/TGAT.html">Quickstart</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">TGLite Module</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.html">tglite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.batch.html">tglite.TBatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.block.html">tglite.TBlock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.context.html">tglite.TContext</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.graph.html">tglite.TGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.sampler.html">tglite.TSampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/tglite.Mailbox.html">tglite.Mailbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/tglite.Memory.html">tglite.Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.nn.html">tglite.nn</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TGLite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/install/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h1>
+<p>TGLite currently only support PyTorch as backend.</p>
+<section id="installing-on-linux">
+<h2>Installing on Linux<a class="headerlink" href="#installing-on-linux" title="Permalink to this heading">¶</a></h2>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 24%" />
+<col style="width: 24%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>python</p></th>
+<th class="head"><p>gcc</p></th>
+<th class="head"><p>torch</p></th>
+<th class="head"><p>torch-scatter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3.7 or later</p></td>
+<td><p>6.1 or later</p></td>
+<td><p>1.12.1 or later</p></td>
+<td><p>2.1.0 or later</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h3>
+<p>Ensure at least PyTorch 1.12.1 and torch-scatter 2.1.0 are installed (refer to <a class="reference external" href="https://pytorch.org/get-started/locally/">PyTorch</a> and <a class="reference external" href="https://pypi.org/project/torch-scatter/">torch-scatter</a> for installation instructions), simply run</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>tglite
+</pre></div>
+</div>
+</section>
+<section id="verification">
+<h3>Verification<a class="headerlink" href="#verification" title="Permalink to this heading">¶</a></h3>
+<p>To verify the installation, run the following in Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tglite</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tglite</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="building-from-source">
+<h2>Building from source<a class="headerlink" href="#building-from-source" title="Permalink to this heading">¶</a></h2>
+<p>To install the latest TGLite code for testing or development on the core, you will need to build TGlite from source. Here, we show how to build TGLite with Python 3.7, PyTorch 1.12.1 and torch-scatter 2.1.0.</p>
+<p>Create and activate a python environment:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>tglite<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7
+<span class="gp">$ </span>conda<span class="w"> </span>activate<span class="w"> </span>tglite
+</pre></div>
+</div>
+<p>Install dependencies that have CUDA versions:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.12.1+cu116<span class="w"> </span>--extra-index-url<span class="w"> </span>https://download.pytorch.org/whl/cu116
+<span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>torch-scatter<span class="o">==</span><span class="m">2</span>.1.0+pt112cu116<span class="w"> </span>-f<span class="w"> </span>https://data.pyg.org/whl/torch-1.12.1+cu116.html
+</pre></div>
+</div>
+<p>Get the TGLite source:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ADAPT-uiuc/tglite.git
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>tglite
+</pre></div>
+</div>
+<p>Then install the package locally:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>setup.py<span class="w"> </span>install
+</pre></div>
+</div>
+<p>This will build the C++ extension (which requires C++14 and OpenMP), install
+the rest of the dependencies (as listed in <cite>pyproject.toml</cite>), and then install
+the <cite>tglite</cite> package.</p>
+<section id="development-mode">
+<h3>Development Mode<a class="headerlink" href="#development-mode" title="Permalink to this heading">¶</a></h3>
+<p>Development mode allows easily editing the code without having to re-install
+the package. However, this only applies to the python code. When editing the
+C++ extension code, it needs to be re-compiled again. Use <cite>develop</cite> instead of <cite>install</cite> to use dev mode:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>setup.py<span class="w"> </span>develop
+</pre></div>
+</div>
+</section>
+<section id="running-tests">
+<h3>Running Tests<a class="headerlink" href="#running-tests" title="Permalink to this heading">¶</a></h3>
+<p>Unit tests are located in <cite>tests</cite> directory. First, install the testing
+dependencies specified in <cite>pyproject.toml</cite>. Doing so might overwrite the dev
+mode install, so you might need to re-enable dev mode. Then, exercise the tests
+using the <cite>pytest</cite> utility.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>install<span class="w"> </span><span class="nb">test</span><span class="w"> </span>dependencies
+<span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;.[test]&#39;</span>
+
+<span class="gp"># </span>re-enable<span class="w"> </span>dev<span class="w"> </span>mode<span class="w"> </span>install
+<span class="gp">$ </span>pip<span class="w"> </span>uninstall<span class="w"> </span>-y<span class="w"> </span>tglite
+<span class="gp">$ </span>python<span class="w"> </span>setup.py<span class="w"> </span>develop
+
+<span class="gp"># </span>run<span class="w"> </span>with<span class="w"> </span><span class="nb">test</span><span class="w"> </span>coverage<span class="w"> </span>report
+<span class="gp">$ </span>pytest<span class="w"> </span>--cov<span class="o">=</span>tglite
+</pre></div>
+</div>
+</section>
+<section id="running-examples">
+<h3>Running Examples<a class="headerlink" href="#running-examples" title="Permalink to this heading">¶</a></h3>
+<p>Inside the <a class="reference external" href="https://github.com/ADAPT-uiuc/tglite/tree/main/examples">examples</a> directory of the repository, several CTDG models have been implemented using <cite>tglite</cite>.
+To run these example models, install the additional dependencies and download the datasets:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>examples
+<span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span><span class="c1"># or &quot;conda install -c conda-forge pandas scikit-learn&quot; using conda</span>
+<span class="gp">$ </span>./download-data.sh
+<span class="gp">$ </span>python<span class="w"> </span>gen-data-files.py<span class="w"> </span>--data<span class="w"> </span>wiki-talk
+</pre></div>
+</div>
+<p>This will download the datasets inside <cite>examples/data/</cite>, one can also download data to other places.</p>
+<p>Use the scripts in <cite>examples/exp</cite> as a starting point, e.g.:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./exp/tgat.sh<span class="w"> </span>--data-path<span class="w"> </span>.<span class="w"> </span>-d<span class="w"> </span>wiki<span class="w"> </span>--epochs<span class="w"> </span><span class="m">3</span>
+</pre></div>
+</div>
+</section>
+<section id="building-this-document-locally">
+<h3>Building this document locally<a class="headerlink" href="#building-this-document-locally" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>install<span class="w"> </span>doc<span class="w"> </span>dependencies
+<span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;.[docs]&#39;</span>
+
+<span class="gp"># </span>build<span class="w"> </span>docs
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>docs
+<span class="gp">$ </span>make<span class="w"> </span>html
+
+<span class="gp"># </span>launch<span class="w"> </span><span class="k">in</span><span class="w"> </span>browser
+<span class="gp">$ </span>sh<span class="w"> </span>run.sh
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tutorial/TGAT.html" class="btn btn-neutral float-right" title="Quickstart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to TGLite’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2024, ADAPT Group
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

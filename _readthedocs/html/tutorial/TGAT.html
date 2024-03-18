@@ -1,0 +1,494 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quickstart &mdash; TGLite 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="tglite" href="../api/python/tglite.html" />
+    <link rel="prev" title="Getting Started" href="../install/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> TGLite
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">TGLite</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Basic-settings">Basic settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Loading-temporal-graph-data">Loading temporal graph data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Runtime-setup">Runtime setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Creating-temporal-sampler">Creating temporal sampler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Creating-models">Creating models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Training-models">Training models</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">TGLite Module</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.html">tglite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.batch.html">tglite.TBatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.block.html">tglite.TBlock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.context.html">tglite.TContext</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.graph.html">tglite.TGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.sampler.html">tglite.TSampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/tglite.Mailbox.html">tglite.Mailbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/tglite.Memory.html">tglite.Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.nn.html">tglite.nn</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TGLite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Quickstart</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorial/TGAT.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="Quickstart">
+<h1>Quickstart<a class="headerlink" href="#Quickstart" title="Permalink to this heading">¶</a></h1>
+<p><img alt="Colab icon" class="no-scaled-link" src="../_images/colab.svg" width="30" />   <a class="reference external" href="https://colab.research.google.com/drive/1wo4iZVCchqMDqUqpYK3ogtzb-ebMAS7g">Run in Google Colab</a>   <img alt="Colab icon" class="no-scaled-link" src="../_images/github.svg" width="30" />   <a class="reference external" href="https://github.com/ADAPT-uiuc/tglite/blob/docs/examples/tgat/TGAT.ipynb">View source on GitHub</a></p>
+<p>This section runs through the API for common practice to perform temporal graph learning. In this tutorial, we train <a class="reference external" href="https://arxiv.org/abs/2002.07962">TGAT</a> on <a class="reference external" href="https://snap.stanford.edu/jodie/">Wikipedia</a> dataset as an example.</p>
+<section id="Basic-settings">
+<h2>Basic settings<a class="headerlink" href="#Basic-settings" title="Permalink to this heading">¶</a></h2>
+<p>TGLite uses <a class="reference external" href="https://pytorch.org/">PyTorch</a> as the backend to perform tensor operations. Here we wrap some helper functions such as dataset handling in <a class="reference external" href="https://github.com/ADAPT-uiuc/tglite/blob/docs/examples/support.py">support.py</a>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import torch
+import tglite as tg
+
+import support
+</pre></div>
+</div>
+</div>
+<p>Next we set the runtime parameters, including hyper-parameters for TGAT training and system-level optimization configurations. TGLite provides several semantic-preserving system optimization options for CTDG-based models like TGAT, including deduplication, memoization, and time-precomputation. Here we enable all the optimizations with <code class="docutils literal notranslate"><span class="pre">OPT_DEDUP</span></code>, <code class="docutils literal notranslate"><span class="pre">OPT_CACHE</span></code> and <code class="docutils literal notranslate"><span class="pre">OPT_TIME</span></code> being <code class="docutils literal notranslate"><span class="pre">True</span></code>, and set the related cache size. By setting <code class="docutils literal notranslate"><span class="pre">MOVE</span> <span class="pre">=</span> <span class="pre">True</span></code>, we will make all feature data reside on
+GPU device memory to reduce data movements.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>DATA: str = &#39;wiki&#39;  # &#39;wiki&#39;, &#39;reddit&#39;, &#39;mooc&#39;, &#39;mag&#39;, &#39;lastfm&#39;, &#39;gdelt&#39;, &#39;wiki-talk&#39;
+DATA_PATH: str = &#39;.&#39;
+EPOCHS: int = 3
+BATCH_SIZE: int = 200
+LEARN_RATE: float = 0.0001
+DROPOUT: float = 0.1
+N_LAYERS: int = 2
+N_HEADS: int = 2
+N_NBRS: int = 20
+DIM_TIME: int = 100
+DIM_EMBED: int = 100
+N_THREADS: int = 32
+SAMPLING: str = &#39;recent&#39;  # &#39;recent&#39;or &#39;uniform&#39;
+OPT_DEDUP = True
+OPT_CACHE = True
+OPT_TIME = True
+OPT_ALL = True
+OPT_DEDUP: bool = OPT_DEDUP or OPT_ALL
+OPT_CACHE: bool = OPT_CACHE or OPT_ALL
+OPT_TIME: bool = OPT_TIME or OPT_ALL
+CACHE_LIMIT: int = int(2e6)
+TIME_WINDOW: int = int(1e4)
+
+MOVE = True
+GPU = 0
+SEED = 1
+PREFIX = &#39;&#39;
+</pre></div>
+</div>
+</div>
+<p>Then, specify the training device and the random seed.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>device = support.make_device(GPU)
+model_path = support.make_model_path(&#39;tgat&#39;, PREFIX, DATA)
+if SEED &gt;= 0:
+    support.set_seed(SEED)
+</pre></div>
+</div>
+</div>
+<p></p></section>
+<section id="Loading-temporal-graph-data">
+<h2>Loading temporal graph data<a class="headerlink" href="#Loading-temporal-graph-data" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference internal" href="../api/python/tglite.graph.html"><span class="doc">TGraph</span></a> object serves as the container for node and edge tensor data. We load graph data to create a <code class="docutils literal notranslate"><span class="pre">TGraph</span></code> object <code class="docutils literal notranslate"><span class="pre">g</span></code> first, and load the features next. <code class="docutils literal notranslate"><span class="pre">TGraph</span></code> also provides the functions to manage graph data. Here, we set computation device to GPU 0 using <code class="docutils literal notranslate"><span class="pre">g.set_compute(device)</span></code>. With <code class="docutils literal notranslate"><span class="pre">g.move_data(device)</span></code>, we move graph features to GPU 0 as well.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import os
+
+g = support.load_graph(os.path.join(DATA_PATH, f&#39;data/{DATA}/edges.csv&#39;))
+support.load_feats(g, DATA, DATA_PATH)
+dim_efeat = 0 if g.efeat is None else g.efeat.shape[1]
+dim_nfeat = g.nfeat.shape[1]
+
+g.set_compute(device)
+if MOVE:
+    g.move_data(device)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+num edges: 157474
+num nodes: 9228
+edge feat: torch.Size([157474, 172])
+node feat: torch.Size([9228, 172])
+</pre></div></div>
+</div>
+<p></p></section>
+<section id="Runtime-setup">
+<h2>Runtime setup<a class="headerlink" href="#Runtime-setup" title="Permalink to this heading">¶</a></h2>
+<p>TGLite uses <a class="reference internal" href="../api/python/tglite.context.html"><span class="doc">TContext</span></a> as the settings and scratch space for runtime. Here, a <code class="docutils literal notranslate"><span class="pre">TContext</span> <span class="pre">ctx</span></code> is initialized with the <code class="docutils literal notranslate"><span class="pre">TGraph</span></code> object <code class="docutils literal notranslate"><span class="pre">g</span></code>. Then, <code class="docutils literal notranslate"><span class="pre">ctx.need_sampling(True)</span></code> will create a TCSR structure inside <code class="docutils literal notranslate"><span class="pre">TGraph</span> <span class="pre">g</span></code> for more efficient sampling. Next, we invoke several functions of <code class="docutils literal notranslate"><span class="pre">ctx</span></code> to perform optimization settings.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ctx = tg.TContext(g)
+ctx.need_sampling(True)
+ctx.enable_embed_caching(OPT_CACHE, DIM_EMBED)
+ctx.enable_time_precompute(OPT_TIME)
+ctx.set_cache_limit(CACHE_LIMIT)
+ctx.set_time_window(TIME_WINDOW)
+</pre></div>
+</div>
+</div>
+<p></p></section>
+<section id="Creating-temporal-sampler">
+<h2>Creating temporal sampler<a class="headerlink" href="#Creating-temporal-sampler" title="Permalink to this heading">¶</a></h2>
+<p>TGLite provides a <a class="reference internal" href="../api/python/tglite.sampler.html"><span class="doc">TSampler</span></a> module that exposes 1-hop temporal sampling. Here, by setting <code class="docutils literal notranslate"><span class="pre">num_threads</span></code>, we can control how many threads are used to perform parallel sampling. The sampler will evenly distribute the target nodes in the mini-batch to each thread.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sampler = tg.TSampler(N_NBRS, strategy=SAMPLING, num_threads=N_THREADS)
+</pre></div>
+</div>
+</div>
+<p></p></section>
+<section id="Creating-models">
+<h2>Creating models<a class="headerlink" href="#Creating-models" title="Permalink to this heading">¶</a></h2>
+<p>A <a class="reference internal" href="../api/python/tglite.batch.html"><span class="doc">TBatch</span></a> object represents a batch of temporal edges to process, which is passed to <code class="docutils literal notranslate"><span class="pre">TGAT.forward()</span></code> as the input. With a batch, a head <code class="docutils literal notranslate"><span class="pre">TBlock</span></code> is created. <code class="docutils literal notranslate"><span class="pre">TBlock</span></code> is the centerpiece of TGLite. A block essentially captures the 1-hop message-flow dependencies between target node-time pairs (i.e. destination nodes) and their temporally sampled neighbors (i.e. source nodes), along with their respective edges. What’s more, TGLite use a doubly-linked list
+structure for the blocks, each representing one layer of GNN. Here, we iteratively perform sampling and generate TBlocks.</p>
+<p>Another feature TGLite provides to allow users to apply optimizations to <code class="docutils literal notranslate"><span class="pre">TBlock</span></code> before sampling its neighbors so to minimize the size of the following subgraphs and thus minimize potential computations. Here inside the loops, we invoke <code class="docutils literal notranslate"><span class="pre">dedup()</span></code> and <code class="docutils literal notranslate"><span class="pre">cache()</span></code> provided by <code class="docutils literal notranslate"><span class="pre">tglite.op</span></code> module to perform such optimizations, and then sample with passed <code class="docutils literal notranslate"><span class="pre">TSampler</span></code>.</p>
+<p>Once the full linked list of the TBlocks are created, we can load features and perform aggregation to compute node embeddings easily with functions provided by <code class="docutils literal notranslate"><span class="pre">tglite.op</span></code>. Here we directly use <code class="docutils literal notranslate"><span class="pre">tglite.nn.TemporalAttnLayer</span></code> to construct the TGAT model.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from torch import nn, Tensor
+from tglite.nn import TemporalAttnLayer
+
+class TGAT(nn.Module):
+    def __init__(self, ctx: tg.TContext,
+                dim_node: int, dim_edge: int, dim_time: int, dim_embed: int,
+                sampler: tg.TSampler, num_layers=2, num_heads=2, dropout=0.1,
+                dedup: bool = True):
+        super().__init__()
+        self.ctx = ctx
+        self.num_layers = num_layers
+        self.attn = nn.ModuleList([
+            TemporalAttnLayer(ctx,
+                num_heads=num_heads,
+                dim_node=dim_node if i == 0 else dim_embed,
+                dim_edge=dim_edge,
+                dim_time=dim_time,
+                dim_out=dim_embed,
+                dropout=dropout)
+            for i in range(num_layers)])
+        self.sampler = sampler
+        self.edge_predictor = support.EdgePredictor(dim=dim_embed)
+        self.dedup = dedup
+
+    def forward(self, batch: tg.TBatch) -&gt; Tensor:
+        head = batch.block(self.ctx)
+        for i in range(self.num_layers):
+            tail = head if i == 0 \
+                else tail.next_block(include_dst=True)
+            tail = tg.op.dedup(tail) if self.dedup else tail
+            tail = tg.op.cache(self.ctx, tail.layer, tail)
+            tail = self.sampler.sample(tail)
+
+        tg.op.preload(head, use_pin=True)
+        if tail.num_dst() &gt; 0:
+            tail.dstdata[&#39;h&#39;] = tail.dstfeat()
+            tail.srcdata[&#39;h&#39;] = tail.srcfeat()
+        embeds = tg.op.aggregate(head, list(reversed(self.attn)), key=&#39;h&#39;)
+        del head
+        del tail
+
+        src, dst, neg = batch.split_data(embeds)
+        scores = self.edge_predictor(src, dst)
+        if batch.neg_nodes is not None:
+            scores = (scores, self.edge_predictor(src, neg))
+
+        return scores
+</pre></div>
+</div>
+</div>
+<p>Now that we’ve defined the TGAT model, we can proceed to instantiate a new TGAT model with pre-set parameters and transfer it to GPU 0.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>model = TGAT(ctx,
+    dim_node=dim_nfeat,
+    dim_edge=dim_efeat,
+    dim_time=DIM_TIME,
+    dim_embed=DIM_EMBED,
+    sampler=sampler,
+    num_layers=N_LAYERS,
+    num_heads=N_HEADS,
+    dropout=DROPOUT,
+    dedup=OPT_DEDUP,)
+model = model.to(device)
+</pre></div>
+</div>
+</div>
+<p></p></section>
+<section id="Training-models">
+<h2>Training models<a class="headerlink" href="#Training-models" title="Permalink to this heading">¶</a></h2>
+<p>Here we use <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html">BCEWithLogitsLoss</a> as the loss function and <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.optim.Adam.html">Adam</a> as the optimizer.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>criterion = torch.nn.BCEWithLogitsLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=LEARN_RATE)
+</pre></div>
+</div>
+</div>
+<p>Data is splitted into training set(70%), validating set(15%) and testing set(15%). <code class="docutils literal notranslate"><span class="pre">neg_sampler</span></code> randomly picks target nodes as negative samples. Then, we launch a <code class="docutils literal notranslate"><span class="pre">support.LinkPredTrainer</span></code> to train the model.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import numpy as np
+
+train_end, val_end = support.data_split(g.num_edges(), 0.7, 0.15)
+neg_sampler = lambda size: np.random.randint(0, g.num_nodes(), size)
+trainer = support.LinkPredTrainer(
+    ctx, model, criterion, optimizer, neg_sampler,
+    EPOCHS, BATCH_SIZE, train_end, val_end,
+    model_path, None, BATCH_STRATEGY)
+
+trainer.train()
+trainer.test()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+epoch 0:
+  loss:58442.9551 val ap:0.9773 val auc:0.9800
+  epoch | total:6.89s loop:6.22s eval:0.67s
+   loop | forward:4.48s backward:1.71s sample:0.24s prep_batch:0.04s prep_input:0.25s post_update:0.00s
+   comp | mem_update:0.00s time_zero:0.60s time_nbrs:0.33s self_attn:1.96s
+epoch 1:
+  loss:92417.7259 val ap:0.9818 val auc:0.9851
+  epoch | total:6.36s loop:5.69s eval:0.67s
+   loop | forward:3.95s backward:1.70s sample:0.24s prep_batch:0.04s prep_input:0.25s post_update:0.00s
+   comp | mem_update:0.00s time_zero:0.07s time_nbrs:0.33s self_attn:1.96s
+epoch 2:
+  loss:120517.6119 val ap:0.9856 val auc:0.9873
+  epoch | total:6.36s loop:5.69s eval:0.66s
+   loop | forward:3.94s backward:1.70s sample:0.24s prep_batch:0.04s prep_input:0.25s post_update:0.00s
+   comp | mem_update:0.00s time_zero:0.07s time_nbrs:0.33s self_attn:1.96s
+best model at epoch 2
+loading saved checkpoint and testing model...
+  test time:0.61s AP:0.9809 AUC:0.9838
+</pre></div></div>
+</div>
+<p>To see and run more TGNN models with <code class="docutils literal notranslate"><span class="pre">tglite</span></code>, see <a class="reference internal" href="../install/index.html#running-examples"><span class="std std-ref">Running Examples</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../api/python/tglite.html" class="btn btn-neutral float-right" title="tglite" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../install/index.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2024, ADAPT Group
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

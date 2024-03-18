@@ -10,7 +10,7 @@ build/
 *.egg-info/
 *.so
 
-# docs/_build/
+docs/_build/
 
 examples/data
 examples/models/

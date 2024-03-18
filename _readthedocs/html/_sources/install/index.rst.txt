@@ -3,8 +3,8 @@ Getting Started
 
 TGLite currently only support PyTorch as backend.
 
-Installation with pip
-``````````````````````
+Installing on Linux
+```````````````````
 
 Prerequisites
 ^^^^^^^^^^^^^
