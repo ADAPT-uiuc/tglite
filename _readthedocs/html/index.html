@@ -87,7 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="install/index.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/TGAT.html">Quickstart</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">TGLite Module</span></p>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api/python/tglite.html">tglite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/python/tglite.batch.html">tglite.TBatch</a></li>
@@ -164,10 +164,70 @@
             
   <section id="welcome-to-tglite-s-documentation">
 <h1>Welcome to TGLite’s documentation!<a class="headerlink" href="#welcome-to-tglite-s-documentation" title="Permalink to this heading">¶</a></h1>
-<p><strong>TGlite</strong> is a lightweight framework for programming TGNNs for CTDGs. It is designed to provide a core set of data abstractions and composable operators.</p>
+<p><strong>TGlite</strong> is a lightweight framework that provides core abstractions and building blocks for practitioners and researchers to implement efficient TGNN models. TGNNs, or Temporal Graph Neural Networks, learn node embeddings for graphs that dynamically change over time by jointly aggregating structural and temporal information from neighboring nodes.</p>
+<p>TGLite employs an abstraction called a TBlock to represent the temporal graph dependencies when aggregating from neighbors, with explicit support for capturing temporal details like edge timestamps, as well as composable operators and optimizations. Compared to prior art, TGLite can outperform the <a class="reference external" href="https://github.com/amazon-science/tgl">TGL</a> framework by up to 3x in terms of training time.</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.html">tglite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.html#edge-iterate-ops">Edge Iterate Ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.html#create-graph-ops">Create Graph Ops</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.batch.html">tglite.TBatch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.batch.html#tglite.TBatch"><code class="docutils literal notranslate"><span class="pre">TBatch</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.batch.html#get-graph-data">Get graph data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.batch.html#get-tblock">Get TBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.batch.html#split-data">Split data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.block.html">tglite.TBlock</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#tglite.TBlock"><code class="docutils literal notranslate"><span class="pre">TBlock</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#query-tblock-attributes">Query TBlock attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#query-neighbor-attributes">Query neighbor attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#query-data">Query data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#query-cache">Query Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#neighbor-ops">Neighbor ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#linked-list-ops">Linked list ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#execution-ops">Execution ops</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.context.html">tglite.TContext</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.context.html#tglite.TContext"><code class="docutils literal notranslate"><span class="pre">TContext</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.context.html#basic-settings">Basic settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.context.html#set-node-embedding-cache">Set node embedding cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.context.html#set-time-precomputation">Set time precomputation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.context.html#query-graph">Query graph</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.graph.html">tglite.TGraph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.graph.html#tglite.TGraph"><code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.graph.html#query-graph-structure">Query graph structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.graph.html#query-graph-data">Query graph data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.graph.html#query-memory-based-tgn-data">Query memory-based TGN data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.graph.html#set-device">Set device</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.sampler.html">tglite.TSampler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.sampler.html#tglite.TSampler"><code class="docutils literal notranslate"><span class="pre">TSampler</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="generated/tglite.Mailbox.html">tglite.Mailbox</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/tglite.Mailbox.html#tglite.Mailbox"><code class="docutils literal notranslate"><span class="pre">Mailbox</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="generated/tglite.Memory.html">tglite.Memory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/tglite.Memory.html#tglite.Memory"><code class="docutils literal notranslate"><span class="pre">Memory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.nn.html">tglite.nn</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.nn.html#tglite.nn.TimeEncode"><code class="docutils literal notranslate"><span class="pre">TimeEncode</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.nn.html#tglite.nn.TemporalAttnLayer"><code class="docutils literal notranslate"><span class="pre">TemporalAttnLayer</span></code></a></li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
