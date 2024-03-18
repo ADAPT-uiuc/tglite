@@ -86,19 +86,19 @@
               <p class="caption" role="heading"><span class="caption-text">TGLite</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installing-on-linux">Installing on Linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation-with-pip">Installation with pip</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#verification">Verification</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#building-from-source">Building from source</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#development-mode">Development Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-from-source">Building from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#development-mode">Development Mode</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#running-tests">Running Tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#running-examples">Running Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#building-this-document-locally">Building this document locally</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#running-examples">Running Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-this-document-locally">Building this document locally</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/TGAT.html">Quickstart</a></li>
@@ -181,8 +181,8 @@
   <section id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h1>
 <p>TGLite currently only support PyTorch as backend.</p>
-<section id="installing-on-linux">
-<h2>Installing on Linux<a class="headerlink" href="#installing-on-linux" title="Permalink to this heading">¶</a></h2>
+<section id="installation-with-pip">
+<h2>Installation with pip<a class="headerlink" href="#installation-with-pip" title="Permalink to this heading">¶</a></h2>
 <section id="prerequisites">
 <h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h3>
 <table class="docutils align-default">
@@ -222,6 +222,10 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">tglite</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, the library is only tested on Linux. MacOS and Windows support is not guaranteed.</p>
+</div>
 </section>
 </section>
 <section id="building-from-source">
@@ -249,15 +253,15 @@
 <p>This will build the C++ extension (which requires C++14 and OpenMP), install
 the rest of the dependencies (as listed in <cite>pyproject.toml</cite>), and then install
 the <cite>tglite</cite> package.</p>
+</section>
 <section id="development-mode">
-<h3>Development Mode<a class="headerlink" href="#development-mode" title="Permalink to this heading">¶</a></h3>
+<h2>Development Mode<a class="headerlink" href="#development-mode" title="Permalink to this heading">¶</a></h2>
 <p>Development mode allows easily editing the code without having to re-install
 the package. However, this only applies to the python code. When editing the
 C++ extension code, it needs to be re-compiled again. Use <cite>develop</cite> instead of <cite>install</cite> to use dev mode:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>setup.py<span class="w"> </span>develop
 </pre></div>
 </div>
-</section>
 <section id="running-tests">
 <h3>Running Tests<a class="headerlink" href="#running-tests" title="Permalink to this heading">¶</a></h3>
 <p>Unit tests are located in <cite>tests</cite> directory. First, install the testing
@@ -276,8 +280,9 @@ using the <cite>pytest</cite> utility.</p>
 </pre></div>
 </div>
 </section>
+</section>
 <section id="running-examples">
-<h3>Running Examples<a class="headerlink" href="#running-examples" title="Permalink to this heading">¶</a></h3>
+<h2>Running Examples<a class="headerlink" href="#running-examples" title="Permalink to this heading">¶</a></h2>
 <p>Inside the <a class="reference external" href="https://github.com/ADAPT-uiuc/tglite/tree/main/examples">examples</a> directory of the repository, several CTDG models have been implemented using <cite>tglite</cite>.
 To run these example models, install the additional dependencies and download the datasets:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>examples
@@ -293,7 +298,7 @@ To run these example models, install the additional dependencies and download th
 </div>
 </section>
 <section id="building-this-document-locally">
-<h3>Building this document locally<a class="headerlink" href="#building-this-document-locally" title="Permalink to this heading">¶</a></h3>
+<h2>Building this document locally<a class="headerlink" href="#building-this-document-locally" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>install<span class="w"> </span>doc<span class="w"> </span>dependencies
 <span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;.[docs]&#39;</span>
 
@@ -305,7 +310,6 @@ To run these example models, install the additional dependencies and download th
 <span class="gp">$ </span>sh<span class="w"> </span>run.sh
 </pre></div>
 </div>
-</section>
 </section>
 </section>
 

@@ -3,8 +3,8 @@ Getting Started
 
 TGLite currently only support PyTorch as backend.
 
-Installing on Linux
-```````````````````
+Installation with pip
+``````````````````````
 
 Prerequisites
 ^^^^^^^^^^^^^
@@ -43,6 +43,9 @@ To verify the installation, run the following in Python:
 
    import tglite
    print(tglite.__version__)
+
+.. note::
+   Currently, the library is only tested on Linux. MacOS and Windows support is not guaranteed.
    
 Building from source
 `````````````````````
@@ -80,7 +83,7 @@ the rest of the dependencies (as listed in `pyproject.toml`), and then install
 the `tglite` package.
 
 Development Mode
-^^^^^^^^^^^^^^^^
+````````````````
 
 Development mode allows easily editing the code without having to re-install
 the package. However, this only applies to the python code. When editing the
@@ -113,7 +116,7 @@ using the `pytest` utility.
 
 
 Running Examples
-^^^^^^^^^^^^^^^^
+````````````````
 Inside the `examples <https://github.com/ADAPT-uiuc/tglite/tree/main/examples>`_ directory of the repository, several CTDG models have been implemented using `tglite`.
 To run these example models, install the additional dependencies and download the datasets:
 
@@ -134,7 +137,7 @@ Use the scripts in `examples/exp` as a starting point, e.g.:
 
 
 Building this document locally
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```````````````````````````````
 .. code-block:: console
    
    # install doc dependencies
