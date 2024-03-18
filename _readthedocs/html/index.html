@@ -86,6 +86,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install/index.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/TGAT.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/tblock.html">TBlock Tutorial</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul>
@@ -164,8 +165,20 @@
             
   <section id="welcome-to-tglite-s-documentation">
 <h1>Welcome to TGLite’s documentation!<a class="headerlink" href="#welcome-to-tglite-s-documentation" title="Permalink to this heading">¶</a></h1>
-<p><strong>TGlite</strong> is a lightweight framework that provides core abstractions and building blocks for practitioners and researchers to implement efficient TGNN models. TGNNs, or Temporal Graph Neural Networks, learn node embeddings for graphs that dynamically change over time by jointly aggregating structural and temporal information from neighboring nodes.</p>
-<p>TGLite employs an abstraction called a TBlock to represent the temporal graph dependencies when aggregating from neighbors, with explicit support for capturing temporal details like edge timestamps, as well as composable operators and optimizations. Compared to prior art, TGLite can outperform the <a class="reference external" href="https://github.com/amazon-science/tgl">TGL</a> framework by up to 3x in terms of training time.</p>
+<p><strong>TGlite</strong> is a lightweight framework that provides core abstractions and building blocks for practitioners and researchers to implement efficient TGNN models. <em>TGNNs</em>, or <em>Temporal Graph Neural Networks</em>, learn node embeddings for graphs that dynamically change over time by jointly aggregating structural and temporal information from neighboring nodes.</p>
+<p>TGLite employs an abstraction called a <cite>TBlock</cite> to represent the temporal graph dependencies when aggregating from neighbors, with explicit support for capturing temporal details like edge timestamps, as well as composable operators and optimizations. Compared to prior art, TGLite can outperform the <a class="reference external" href="https://github.com/amazon-science/tgl">TGL</a> framework by up to <a class="reference external" href="some-url">3x</a> in terms of training time.</p>
+<a class="reference internal image-reference" href="_images/train.png"><img alt="End-to-end training epoch time comparison on an Nvidia A100 GPU" src="_images/train.png" style="width: 600px;" /></a>
+<section id="install-tglite">
+<h2>Install TGLite<a class="headerlink" href="#install-tglite" title="Permalink to this heading">¶</a></h2>
+<p>See <a class="reference internal" href="install/index.html#getting-started"><span class="std std-ref">Getting started</span></a> for instructions on how to install the TGLite binaries. To install from source or for local development, refer to <a class="reference internal" href="install/index.html#build-from-source"><span class="std std-ref">Building from source</span></a> and <a class="reference internal" href="install/index.html#development-mode"><span class="std std-ref">Development mode</span></a>.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this heading">¶</a></h2>
+<p>We provide a set of tutorials to help you get started with TGLite. These tutorials cover the basics of using TGLite, as well as more advanced topics.</p>
+<ol class="arabic simple" start="0">
+<li><p><span class="xref std std-ref">Quickstart</span>: A step-by-step guide to train a TGNN model using TGLite.</p></li>
+<li><p><a class="reference internal" href="tutorial/tblock.html#tblock-tutorial"><span class="std std-ref">TBlock Tutorial</span></a>: A tutorial on how to use the TBlock abstraction to implement TGNN models.</p></li>
+</ol>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -233,6 +246,7 @@
 <p class="admonition-title">Note</p>
 <p>This project is under active development.</p>
 </div>
+</section>
 </section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>

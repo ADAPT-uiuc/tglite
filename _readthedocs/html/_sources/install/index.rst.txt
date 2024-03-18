@@ -1,3 +1,5 @@
+.. _getting-started:
+
 Getting Started
 ---------------
 
@@ -46,7 +48,9 @@ To verify the installation, run the following in Python:
 
 .. note::
    Currently, the library is only tested on Linux. MacOS and Windows support is not guaranteed.
-   
+
+.. _build-from-source:
+
 Building from source
 `````````````````````
 To install the latest TGLite code for testing or development on the core, you will need to build TGlite from source. Here, we show how to build TGLite with Python 3.7, PyTorch 1.12.1 and torch-scatter 2.1.0.
@@ -81,6 +85,8 @@ Then install the package locally:
 This will build the C++ extension (which requires C++14 and OpenMP), install
 the rest of the dependencies (as listed in `pyproject.toml`), and then install
 the `tglite` package.
+
+.. _development-mode:
 
 Development Mode
 ````````````````
