@@ -25,7 +25,7 @@ Tutorials
 We provide a set of tutorials to help you get started with TGLite. These tutorials cover the basics of using TGLite, as well as more advanced topics.
 
 0. Quickstart_: A step-by-step guide to train a TGNN model using TGLite.
-1. :ref:`TBlock Tutorial <tblock_tutorial>`: A tutorial on how to use the TBlock abstraction to implement TGNN models.
+1. :ref:`How does TBlock work? <tblock_tutorial>`: A tutorial on how to use the TBlock abstraction to implement TGNN models.
 
 .. _Quickstart: tutorial/tgat.ipynb
 
