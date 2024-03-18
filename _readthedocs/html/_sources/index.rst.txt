@@ -10,10 +10,11 @@ Welcome to TGLite's documentation!
 
 TGLite employs an abstraction called a `TBlock` to represent the temporal graph dependencies when aggregating from neighbors, with explicit support for capturing temporal details like edge timestamps, as well as composable operators and optimizations. Compared to prior art, TGLite can outperform the `TGL <https://github.com/amazon-science/tgl>`_ framework by up to `3x <some-url>`_ in terms of training time.
 
-.. image:: img/train.png
-  :width: 600
-  :alt: End-to-end training epoch time comparison on an Nvidia A100 GPU
-
+.. _train figure:
+.. figure:: img/train.png
+   :alt: End-to-end training epoch time comparison on an Nvidia A100 GPU
+   :align: center
+   :figwidth: 85 %
 
 Install TGLite
 --------------
@@ -23,8 +24,10 @@ Tutorials
 ---------
 We provide a set of tutorials to help you get started with TGLite. These tutorials cover the basics of using TGLite, as well as more advanced topics.
 
-0. :ref:`Quickstart <TGAT.ipynb>`: A step-by-step guide to train a TGNN model using TGLite.
+0. Quickstart_: A step-by-step guide to train a TGNN model using TGLite.
 1. :ref:`TBlock Tutorial <tblock_tutorial>`: A tutorial on how to use the TBlock abstraction to implement TGNN models.
+
+.. _Quickstart: tutorial/tgat.ipynb
 
 .. toctree::
    :maxdepth: 1
@@ -33,7 +36,7 @@ We provide a set of tutorials to help you get started with TGLite. These tutoria
    :glob:
 
    install/index
-   tutorial/TGAT
+   tutorial/tgat
    tutorial/tblock
 
 .. toctree::

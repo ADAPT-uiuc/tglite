@@ -1,7 +1,7 @@
 .. _tblock_tutorial:
 
-TBlock Tutorial
-===============
+How does TBlock work?
+=====================
 
 Introduction
 ------------
@@ -61,27 +61,28 @@ Example Usage
 Here's an example code snippet demonstrating the usage of TBlock:
 
 .. code-block:: python
+   
+   # Create the head TBlock from a batch data
+   head = batch.block(self.ctx)
 
-    # Create the head TBlock from a batch data
-    head = batch.block(self.ctx)
-
-    # Create the next TBlock iteratively
-    for i in range(self.num_layers):
-        tail = head if i == 0 else tail.next_block(...)
-        # Apply optimizations
-        tail = tg.op.dedup(tail)
-        tail = tg.op.cache(self.ctx, tail, ...)
-        # Sample neighbors
-        tail = self.sampler.sample(tail)
+   # Create the next TBlock iteratively
+   for i in range(self.num_layers):
+      tail = head if i == 0 else tail.next_block(...)
+      # Apply optimizations
+      tail = tg.op.dedup(tail)
+      tail = tg.op.cache(self.ctx, tail, ...)
+      # Sample neighbors
+      tail = self.sampler.sample(tail)
     
-    # Load data
-    tg.op.preload(head, use_pin=True)
-    tail.dstdata[’h’] = tail.dstfeat()
-    tail.srcdata[’h’] = tail.srcfeat()
-    # Perform computations
-    emb = tg.op.aggregate(head, self.compute, key=’h’)
+   # Load data
+   tg.op.preload(head, use_pin=True)
+   tail.dstdata['h'] = tail.dstfeat()
+   tail.srcdata['h'] = tail.srcfeat()
+   # Perform computations
+   emb = tg.op.aggregate(head, self.compute, key='h')
+
     
 
 In this tutorial, you learned about TBlock, a key component of the TGLite framework. TBlocks provide a powerful mechanism for capturing and analyzing message-flow dependencies in a continuous-time dynamic graph. By understanding the design choices and features of TBlock, you can effectively leverage its capabilities within your applications.
 
-For more details and advanced usage, refer to the :ref:`TBlock <api-block>`.
+For more details and advanced usage, refer to the :ref: `TBlock <api-block>`.

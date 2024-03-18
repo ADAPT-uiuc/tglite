@@ -12,7 +12,7 @@ Prerequisites
 ^^^^^^^^^^^^^
 
 .. list-table:: 
-   :widths: 26 26 26 30
+   :widths: 50 50 50 50
    :header-rows: 1
 
    * - python
