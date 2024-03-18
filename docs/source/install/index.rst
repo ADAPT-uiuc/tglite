@@ -9,11 +9,23 @@ Installing on Linux
 Prerequisites
 ^^^^^^^^^^^^^
 
-* python 3.7 or later
-* gcc 6.1 or later
-* pip
-* torch 1.12.1 or later
-* torch-scatter 2.1.0 or later
+.. list-table:: 
+   :widths: 26 26 26 30
+   :header-rows: 1
+
+   * - python
+     - gcc
+     - torch
+     - torch-scatter
+   * - 3.7 or later
+     - 6.1 or later
+     - 1.12.1 or later
+     - 2.1.0 or later
+
+.. * python 3.7 or later
+.. * gcc 6.1 or later
+.. * torch 1.12.1 or later
+.. * torch-scatter 2.1.0 or later
 
 Installation
 ^^^^^^^^^^^^

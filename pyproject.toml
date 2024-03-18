@@ -6,7 +6,8 @@ description = "Temporal GNN Lightweight Framework"
 readme = "README.md"
 license = {file = "LICENSE"}
 authors = [
-  {name = "Yufeng Wang", email = "yufengwang05@gmail.com"}
+  {name = "Yufeng Wang", email = "yufengwang05@gmail.com"},
+  {name = "Charith Mendis", email = "charithm@illinois.edu"}
 ]
 maintainers = [
   {name = "Wanyu Zhao", email = "wanyu2@illinois.edu"}
