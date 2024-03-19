@@ -11,7 +11,7 @@ build:
     # python: "mambaforge-22.9"
     python: "3.7"
 
-  # commands:
+  commands:
     - pip install torch==1.12.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
     - pip install torch-scatter==2.1.0+pt112cu116 -f https://data.pyg.org/whl/torch-1.12.1+cu116.html
     - pip install .[docs]
