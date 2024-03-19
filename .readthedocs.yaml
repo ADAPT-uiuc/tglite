@@ -12,12 +12,12 @@ build:
     python: "3.7"
 
   commands:
-    - pip install torch==1.12.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
-    - pip install torch-scatter==2.1.0+pt112cu116 -f https://data.pyg.org/whl/torch-1.12.1+cu116.html
-    - pip install .[docs]
-    - cd docs/ && make html
-    - mkdir _readthedocs
-    - cp -r docs/build/html _readthedocs/
+  #   - pip install torch==1.12.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
+  #   - pip install torch-scatter==2.1.0+pt112cu116 -f https://data.pyg.org/whl/torch-1.12.1+cu116.html
+  #   - pip install .[docs]
+  #   - cd docs/ && make html
+  #   - mkdir _readthedocs
+  #   - cp -r docs/build/html _readthedocs/
     # - python setup.py install
     # Install dependencies
     # - cd docs/ && pip install -r requirements.txt
@@ -28,7 +28,7 @@ build:
     # - cd docs/build && ls
     # - mkdir _readthedocs
     # - cp --recursive docs/build/html _readthedocs/
-    # - ls _readthedocs
+    - ls _readthedocs
 
 # conda:
 #   environment: environment.yml
