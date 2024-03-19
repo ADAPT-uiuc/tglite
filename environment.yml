@@ -1,0 +1,6 @@
+channels:
+- conda-forge
+- defaults
+dependencies:
+- pip:
+  torch==1.12.1
