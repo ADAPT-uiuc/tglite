@@ -1,0 +1,58 @@
+[project]
+name = "tglite"
+# dynamic = ["version"]
+version = "0.1.0"
+description = "Temporal GNN Lightweight Framework"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Yufeng Wang", email = "yufengwang05@gmail.com"},
+  {name = "Charith Mendis", email = "charithm@illinois.edu"}
+]
+maintainers = [
+  {name = "Wanyu Zhao", email = "wanyu2@illinois.edu"}
+]
+keywords = [
+  "machine learning", "TGNN",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+]
+requires-python = ">=3.7"
+dependencies = [
+  'numpy==1.21.6',
+  'torch>=1.12.1',
+  'torch-scatter>=2.1.0',
+]
+
+[project.optional-dependencies]
+dev = ["sphinx"]
+test = ["pytest", "pytest-cov"]
+docs = ["sphinx_rtd_theme", "nbsphinx"]
+
+[project.urls]
+homepage = "https://github.com/ADAPT-uiuc/tglite"
+documentation = "https://readthedocs.org"
+repository = "https://github.com/ADAPT-uiuc/tglite"
+issues = "https://github.com/me/ADAPT-uiuc/tglite/issues"
+
+# [tool.setuptools.dynamic]
+# version = {attr = "tglite.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["python"]
+include = ["tglite*"]
+namespaces = false
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "torch>=1.12.1"]
+build-backend = "setuptools.build_meta"
