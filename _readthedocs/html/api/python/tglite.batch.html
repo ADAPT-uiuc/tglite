@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tglite.TBatch &mdash; TGLite 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="tglite.TBatch.g" href="../../generated/tglite.TBatch.g.html" />
+    <link rel="prev" title="tglite.from_csv" href="../../generated/tglite.from_csv.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> TGLite
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">TGLite</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/tblock.html">How does TBlock work?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tglite.html">tglite</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tglite.TBatch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tglite.TBatch"><code class="docutils literal notranslate"><span class="pre">TBatch</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tglite.TBatch.__init__"><code class="docutils literal notranslate"><span class="pre">TBatch.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#get-graph-data">Get graph data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBatch.g.html">tglite.TBatch.g</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBatch.neg_nodes.html">tglite.TBatch.neg_nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBatch.eids.html">tglite.TBatch.eids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBatch.edges.html">tglite.TBatch.edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBatch.nodes.html">tglite.TBatch.nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBatch.times.html">tglite.TBatch.times</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#get-tblock">Get TBlock</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBatch.block.html">tglite.TBatch.block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBatch.block_adj.html">tglite.TBatch.block_adj</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#split-data">Split data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TBatch.split_data.html">tglite.TBatch.split_data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.block.html">tglite.TBlock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.context.html">tglite.TContext</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.graph.html">tglite.TGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.sampler.html">tglite.TSampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.Mailbox.html">tglite.Mailbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.Memory.html">tglite.Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.nn.html">tglite.nn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.op.html">tglite.op</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">TGLite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>tglite.TBatch</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/ADAPT-uiuc/tglite/blob/main/docs/source/api/python/tglite.batch.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="tglite-tbatch">
+<span id="api-batch"></span><h1>tglite.TBatch<a class="headerlink" href="#tglite-tbatch" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="tglite.TBatch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tglite.</span></span><span class="sig-name descname"><span class="pre">TBatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="tglite.graph.html#tglite.TGraph" title="tglite.TGraph"><span class="pre">TGraph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tglite.TBatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a batch of temporal edges to process. A thin wrapper with a TGraph reference and without actually
+materializing any arrays until they are needed.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tglite.TBatch.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="tglite.graph.html#tglite.TGraph" title="tglite.TGraph"><span class="pre">TGraph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tglite.TBatch.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal constructor for creating a TBatch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<a class="reference internal" href="tglite.graph.html#tglite.TGraph" title="tglite.TGraph"><em>TGraph</em></a>) – The TGraph.</p></li>
+<li><p><strong>range</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em>) – The range of edge indices: beginning and ending edge index.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<section id="get-graph-data">
+<h2>Get graph data<a class="headerlink" href="#get-graph-data" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBatch.g.html#tglite.TBatch.g" title="tglite.TBatch.g"><code class="xref py py-obj docutils literal notranslate"><span class="pre">g</span></code></a></p></td>
+<td><p>Returns the TGraph.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBatch.neg_nodes.html#tglite.TBatch.neg_nodes" title="tglite.TBatch.neg_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neg_nodes</span></code></a></p></td>
+<td><p>Get the negative nodes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBatch.eids.html#tglite.TBatch.eids" title="tglite.TBatch.eids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eids</span></code></a>()</p></td>
+<td><p>Returns edge ids of the batch.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBatch.edges.html#tglite.TBatch.edges" title="tglite.TBatch.edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edges</span></code></a>()</p></td>
+<td><p>Returns the edges in the batch as a two-column ndarray, where the first column represents the source</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBatch.nodes.html#tglite.TBatch.nodes" title="tglite.TBatch.nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code></a>([include_negs, reverse])</p></td>
+<td><p>Returns a node index array: [src, des(, neg)] if reverse is False or [des, src(, src)] if reverse is True.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBatch.times.html#tglite.TBatch.times" title="tglite.TBatch.times"><code class="xref py py-obj docutils literal notranslate"><span class="pre">times</span></code></a>([include_dsts, include_negs])</p></td>
+<td><p>Returns timestamps corresponding to the nodes. It retrieves timestamps of the batch edges (as the timestamps for source nodes),</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="get-tblock">
+<h2>Get TBlock<a class="headerlink" href="#get-tblock" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBatch.block.html#tglite.TBatch.block" title="tglite.TBatch.block"><code class="xref py py-obj docutils literal notranslate"><span class="pre">block</span></code></a>(ctx)</p></td>
+<td><p>Creates the head TBlock of the batch, including negative nodes if set.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TBatch.block_adj.html#tglite.TBatch.block_adj" title="tglite.TBatch.block_adj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">block_adj</span></code></a>(ctx)</p></td>
+<td><p>Creates the head TBlock with batch edges as neighbors (excluding negative nodes).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="split-data">
+<h2>Split data<a class="headerlink" href="#split-data" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TBatch.split_data.html#tglite.TBatch.split_data" title="tglite.TBatch.split_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split_data</span></code></a>(data)</p></td>
+<td><p>Splits the data into multiple arrays, with each array containing a number of rows equal to the batch size.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../generated/tglite.TBatch.g.html" class="btn btn-neutral float-right" title="tglite.TBatch.g" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../generated/tglite.from_csv.html" class="btn btn-neutral float-left" title="tglite.from_csv" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2024, ADAPT Group
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

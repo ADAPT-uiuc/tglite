@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tglite.TGraph &mdash; TGLite 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="tglite.TGraph.num_nodes" href="../../generated/tglite.TGraph.num_nodes.html" />
+    <link rel="prev" title="tglite.TContext.graph" href="../../generated/tglite.TContext.graph.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> TGLite
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">TGLite</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/tblock.html">How does TBlock work?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tglite.html">tglite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.batch.html">tglite.TBatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.block.html">tglite.TBlock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.context.html">tglite.TContext</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tglite.TGraph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tglite.TGraph"><code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tglite.TGraph.__init__"><code class="docutils literal notranslate"><span class="pre">TGraph.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#query-graph-structure">Query graph structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TGraph.num_nodes.html">tglite.TGraph.num_nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TGraph.num_edges.html">tglite.TGraph.num_edges</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#query-graph-data">Query graph data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TGraph.efeat.html">tglite.TGraph.efeat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TGraph.nfeat.html">tglite.TGraph.nfeat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TGraph.edata.html">tglite.TGraph.edata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TGraph.ndata.html">tglite.TGraph.ndata</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#query-memory-based-tgn-data">Query memory-based TGN data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TGraph.mem.html">tglite.TGraph.mem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TGraph.mailbox.html">tglite.TGraph.mailbox</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#set-device">Set device</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TGraph.storage_device.html">tglite.TGraph.storage_device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TGraph.compute_device.html">tglite.TGraph.compute_device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TGraph.set_compute.html">tglite.TGraph.set_compute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/tglite.TGraph.move_data.html">tglite.TGraph.move_data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.sampler.html">tglite.TSampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.Mailbox.html">tglite.Mailbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.Memory.html">tglite.Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.nn.html">tglite.nn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.op.html">tglite.op</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">TGLite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>tglite.TGraph</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/ADAPT-uiuc/tglite/blob/main/docs/source/api/python/tglite.graph.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="tglite-tgraph">
+<span id="api-graph"></span><h1>tglite.TGraph<a class="headerlink" href="#tglite-tgraph" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="tglite.TGraph">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tglite.</span></span><span class="sig-name descname"><span class="pre">TGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edges</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">times</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tglite.TGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>A container for temporal graph and related tensor data. It initially stores temporal edges in COO format,
+sorted based on timestamp. While performing neighborhood sampling, it uses CSR format for faster lookups. TGLite
+automatically handles the construction and management of these graph formats without intervention from the user.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tglite.TGraph.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edges</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">times</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tglite.TGraph.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal constructor for creating a TGraph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>edges</strong> (<em>np.ndarray</em>) – </p></li>
+<li><p><strong>times</strong> (<em>np.ndarray</em>) – </p></li>
+<li><p><strong>num_nodes</strong> (<em>int</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<section id="query-graph-structure">
+<h2>Query graph structure<a class="headerlink" href="#query-graph-structure" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TGraph.num_nodes.html#tglite.TGraph.num_nodes" title="tglite.TGraph.num_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_nodes</span></code></a>()</p></td>
+<td><p>Total number of nodes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TGraph.num_edges.html#tglite.TGraph.num_edges" title="tglite.TGraph.num_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_edges</span></code></a>()</p></td>
+<td><p>Total number of edges</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="query-graph-data">
+<h2>Query graph data<a class="headerlink" href="#query-graph-data" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TGraph.efeat.html#tglite.TGraph.efeat" title="tglite.TGraph.efeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">efeat</span></code></a></p></td>
+<td><p>Returns edge feature</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TGraph.nfeat.html#tglite.TGraph.nfeat" title="tglite.TGraph.nfeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nfeat</span></code></a></p></td>
+<td><p>Returns node feature</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TGraph.edata.html#tglite.TGraph.edata" title="tglite.TGraph.edata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edata</span></code></a></p></td>
+<td><p>Returns edge data</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TGraph.ndata.html#tglite.TGraph.ndata" title="tglite.TGraph.ndata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndata</span></code></a></p></td>
+<td><p>Returns node data</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="query-memory-based-tgn-data">
+<h2>Query memory-based TGN data<a class="headerlink" href="#query-memory-based-tgn-data" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TGraph.mem.html#tglite.TGraph.mem" title="tglite.TGraph.mem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mem</span></code></a></p></td>
+<td><p>Returns node memory</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TGraph.mailbox.html#tglite.TGraph.mailbox" title="tglite.TGraph.mailbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mailbox</span></code></a></p></td>
+<td><p>Returns node mailbox</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="set-device">
+<h2>Set device<a class="headerlink" href="#set-device" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TGraph.storage_device.html#tglite.TGraph.storage_device" title="tglite.TGraph.storage_device"><code class="xref py py-obj docutils literal notranslate"><span class="pre">storage_device</span></code></a>()</p></td>
+<td><p>Returns TGraph's storage device</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TGraph.compute_device.html#tglite.TGraph.compute_device" title="tglite.TGraph.compute_device"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_device</span></code></a>()</p></td>
+<td><p>Returns TGraph's computing device</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../generated/tglite.TGraph.set_compute.html#tglite.TGraph.set_compute" title="tglite.TGraph.set_compute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_compute</span></code></a>(device)</p></td>
+<td><p>Sets computing device</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../generated/tglite.TGraph.move_data.html#tglite.TGraph.move_data" title="tglite.TGraph.move_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">move_data</span></code></a>(device, **kwargs)</p></td>
+<td><p>Moves tensor data to device while keeping graph on CPU</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../generated/tglite.TGraph.num_nodes.html" class="btn btn-neutral float-right" title="tglite.TGraph.num_nodes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../generated/tglite.TContext.graph.html" class="btn btn-neutral float-left" title="tglite.TContext.graph" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2024, ADAPT Group
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
