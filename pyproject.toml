@@ -37,7 +37,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["sphinx"]
 test = ["pytest", "pytest-cov"]
-docs = ["sphinx_rtd_theme", "nbsphinx"]
+docs = ["sphinx_rtd_theme", "nbsphinx", "ipykernel"]
 
 [project.urls]
 homepage = "https://github.com/ADAPT-uiuc/tglite"
