@@ -3,4 +3,4 @@ channels:
 - defaults
 dependencies:
 - pip:
-  torch==1.12.1
+  - torch==1.12.1
