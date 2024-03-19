@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Reference &mdash; TGLite 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            TGLite
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">TGLite</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/tblock.html">How does TBlock work?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tglite.html">tglite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.batch.html">tglite.TBatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.block.html">tglite.TBlock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.context.html">tglite.TContext</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.graph.html">tglite.TGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.sampler.html">tglite.TSampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.Mailbox.html">tglite.Mailbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.Memory.html">tglite.Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.nn.html">tglite.nn</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">TGLite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API Reference</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ADAPT-uiuc/tglite/blob/main/docs/source/api/python/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tglite.html">tglite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tglite.html#edge-iterate-ops">Edge Iterate Ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.html#create-graph-ops">Create Graph Ops</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.batch.html">tglite.TBatch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tglite.batch.html#tglite.TBatch"><code class="docutils literal notranslate"><span class="pre">TBatch</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.batch.html#get-graph-data">Get graph data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.batch.html#get-tblock">Get TBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.batch.html#split-data">Split data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.block.html">tglite.TBlock</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tglite.block.html#tglite.TBlock"><code class="docutils literal notranslate"><span class="pre">TBlock</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.block.html#query-tblock-attributes">Query TBlock attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.block.html#query-neighbor-attributes">Query neighbor attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.block.html#query-data">Query data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.block.html#query-cache">Query Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.block.html#neighbor-ops">Neighbor ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.block.html#linked-list-ops">Linked list ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.block.html#execution-ops">Execution ops</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.context.html">tglite.TContext</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tglite.context.html#tglite.TContext"><code class="docutils literal notranslate"><span class="pre">TContext</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.context.html#basic-settings">Basic settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.context.html#set-node-embedding-cache">Set node embedding cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.context.html#set-time-precomputation">Set time precomputation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.context.html#query-graph">Query graph</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.graph.html">tglite.TGraph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tglite.graph.html#tglite.TGraph"><code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.graph.html#query-graph-structure">Query graph structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.graph.html#query-graph-data">Query graph data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.graph.html#query-memory-based-tgn-data">Query memory-based TGN data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.graph.html#set-device">Set device</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.Mailbox.html">tglite.Mailbox</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.Mailbox.html#tglite.Mailbox"><code class="docutils literal notranslate"><span class="pre">Mailbox</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.Memory.html">tglite.Memory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.Memory.html#tglite.Memory"><code class="docutils literal notranslate"><span class="pre">Memory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.sampler.html">tglite.TSampler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tglite.sampler.html#tglite.TSampler"><code class="docutils literal notranslate"><span class="pre">TSampler</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tglite.nn.html">tglite.nn</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tglite.nn.html#tglite.nn.TimeEncode"><code class="docutils literal notranslate"><span class="pre">TimeEncode</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tglite.nn.html#tglite.nn.TemporalAttnLayer"><code class="docutils literal notranslate"><span class="pre">TemporalAttnLayer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.op.edge_view.html">tglite.op.edge_view</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.op.edge_view.html#tglite.op.edge_view"><code class="docutils literal notranslate"><span class="pre">edge_view()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.op.edge_softmax.html">tglite.op.edge_softmax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.op.edge_softmax.html#tglite.op.edge_softmax"><code class="docutils literal notranslate"><span class="pre">edge_softmax()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.op.edge_reduce.html">tglite.op.edge_reduce</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.op.edge_reduce.html#tglite.op.edge_reduce"><code class="docutils literal notranslate"><span class="pre">edge_reduce()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.op.src_scatter.html">tglite.op.src_scatter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.op.src_scatter.html#tglite.op.src_scatter"><code class="docutils literal notranslate"><span class="pre">src_scatter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.op.coalesce.html">tglite.op.coalesce</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.op.coalesce.html#tglite.op.coalesce"><code class="docutils literal notranslate"><span class="pre">coalesce()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.op.preload.html">tglite.op.preload</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.op.preload.html#tglite.op.preload"><code class="docutils literal notranslate"><span class="pre">preload()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.op.aggregate.html">tglite.op.aggregate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.op.aggregate.html#tglite.op.aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.op.propagate.html">tglite.op.propagate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.op.propagate.html#tglite.op.propagate"><code class="docutils literal notranslate"><span class="pre">propagate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.op.dedup.html">tglite.op.dedup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.op.dedup.html#tglite.op.dedup"><code class="docutils literal notranslate"><span class="pre">dedup()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.op.cache.html">tglite.op.cache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.op.cache.html#tglite.op.cache"><code class="docutils literal notranslate"><span class="pre">cache()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.op.precomputed_zeros.html">tglite.op.precomputed_zeros</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.op.precomputed_zeros.html#tglite.op.precomputed_zeros"><code class="docutils literal notranslate"><span class="pre">precomputed_zeros()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/tglite.op.precomputed_times.html">tglite.op.precomputed_times</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/tglite.op.precomputed_times.html#tglite.op.precomputed_times"><code class="docutils literal notranslate"><span class="pre">precomputed_times()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ADAPT Group.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

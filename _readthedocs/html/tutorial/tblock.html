@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How does TBlock work? &mdash; TGLite 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="tglite" href="../api/python/tglite.html" />
+    <link rel="prev" title="Quickstart" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TGLite
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">TGLite</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How does TBlock work?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#doubly-linked-list-structure">Doubly-Linked List Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#target-and-neighbor-information">Target and Neighbor Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hooks-mechanism-for-post-processing">Hooks Mechanism for Post-Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#block-lifecycle-and-usage">Block Lifecycle and Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-usage">Example Usage</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.html">tglite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.batch.html">tglite.TBatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.block.html">tglite.TBlock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.context.html">tglite.TContext</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.graph.html">tglite.TGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.sampler.html">tglite.TSampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/tglite.Mailbox.html">tglite.Mailbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/tglite.Memory.html">tglite.Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python/tglite.nn.html">tglite.nn</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TGLite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">How does TBlock work?</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ADAPT-uiuc/tglite/blob/main/docs/source/tutorial/tblock.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-does-tblock-work">
+<span id="tutorial-tblock"></span><h1>How does TBlock work?<a class="headerlink" href="#how-does-tblock-work" title="Permalink to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>This tutorial provides an overview of <cite>TBlock</cite>, a key component of the TGLite framework. TBlocks, or temporal blocks, capture the message-flow dependencies between target node-time pairs and their temporally sampled neighbors. This tutorial will explain the design choices and features of TBlock to help you understand its usage within the TGLite framework.</p>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>TBlocks are motivated by the MFG (Message Flow Graph) objects available in the DGL (Deep Graph Library) but provide additional capabilities for CTDG (Continuous-Time Dynamic Graph) models. The following sections will explain the three key design choices that distinguish TBlocks from MFGs.</p>
+</section>
+<section id="doubly-linked-list-structure">
+<h2>Doubly-Linked List Structure<a class="headerlink" href="#doubly-linked-list-structure" title="Permalink to this heading"></a></h2>
+<p>One key distinction of TBlocks is the use of a doubly-linked list structure. This structure explicitly captures the multi-hop neighbor sampling/aggregation relationship that TBlocks are used for. Unlike standalone MFG objects in DGL/TGL, TBlocks maintain links to related blocks, enabling efficient multi-hop aggregation operations.</p>
+</section>
+<section id="target-and-neighbor-information">
+<h2>Target and Neighbor Information<a class="headerlink" href="#target-and-neighbor-information" title="Permalink to this heading"></a></h2>
+<p>TBlocks primarily focus on target destination nodes and optionally include information about neighbor source nodes. By separating neighbor information as optional, TBlocks allow for easier manipulation of target node information. This flexibility enables optimizations such as deduplication and caching to be applied effectively, as they can be performed on destination nodes before sampling for neighbors.</p>
+</section>
+<section id="hooks-mechanism-for-post-processing">
+<h2>Hooks Mechanism for Post-Processing<a class="headerlink" href="#hooks-mechanism-for-post-processing" title="Permalink to this heading"></a></h2>
+<p>TBlocks provide a hooks mechanism for running post-processing procedures. These hooks are callable functions that are invoked after computations are performed on the block. The hooks mechanism enables scheduling of transformations on computed output, such as deduplication and preserving output semantics. TGLite runtime automatically handles the execution of registered hooks, simplifying the post-processing step.</p>
+<figure class="align-center" id="id1" style="width: 60%">
+<span id="tblock-structure-figure"></span><img alt="tblock-structure" src="../_images/tblock-structure.png" />
+<figcaption>
+<p><span class="caption-text">Diagram of the doubly-linked list design and internal structure of a TBlock (destination node-time is denoted as &lt;i,t&gt;).</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="block-lifecycle-and-usage">
+<h2>Block Lifecycle and Usage<a class="headerlink" href="#block-lifecycle-and-usage" title="Permalink to this heading"></a></h2>
+<p>The block lifecycle involves creating a TBlock, applying optimizations, sampling neighbors, performing computations, and accessing cached data. The following steps outline the typical usage of a TBlock:</p>
+<ol class="arabic simple">
+<li><p>Create a TBlock using various methods or construct it directly.</p></li>
+<li><p>Apply optimizations to the block to minimize subgraph size and potential computations.</p></li>
+<li><p>Sample neighbors of the block to capture message-flow dependencies.</p></li>
+<li><p>Manipulate the block in-place, register hooks, or cache data.</p></li>
+<li><p>Use the block for computations and access cached data for specific nodes and edges.</p></li>
+</ol>
+<figure class="align-center" id="id2" style="width: 60%">
+<span id="tblock-workflow-figure"></span><img alt="tblock-workflow" src="../_images/tblock-workflow.png" />
+<figcaption>
+<p><span class="caption-text">Typical flow of constructing and using a TBlock object.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="example-usage">
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this heading"></a></h2>
+<p>Here’s an example code snippet demonstrating the usage of TBlock:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the head TBlock from a batch data</span>
+<span class="n">head</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">)</span>
+
+<span class="c1"># Create the next TBlock iteratively</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_layers</span><span class="p">):</span>
+   <span class="n">tail</span> <span class="o">=</span> <span class="n">head</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">tail</span><span class="o">.</span><span class="n">next_block</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+   <span class="c1"># Apply optimizations</span>
+   <span class="n">tail</span> <span class="o">=</span> <span class="n">tg</span><span class="o">.</span><span class="n">op</span><span class="o">.</span><span class="n">dedup</span><span class="p">(</span><span class="n">tail</span><span class="p">)</span>
+   <span class="n">tail</span> <span class="o">=</span> <span class="n">tg</span><span class="o">.</span><span class="n">op</span><span class="o">.</span><span class="n">cache</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">tail</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+   <span class="c1"># Sample neighbors</span>
+   <span class="n">tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">tail</span><span class="p">)</span>
+
+<span class="c1"># Load data</span>
+<span class="n">tg</span><span class="o">.</span><span class="n">op</span><span class="o">.</span><span class="n">preload</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">use_pin</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tail</span><span class="o">.</span><span class="n">dstdata</span><span class="p">[</span><span class="s1">&#39;h&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tail</span><span class="o">.</span><span class="n">dstfeat</span><span class="p">()</span>
+<span class="n">tail</span><span class="o">.</span><span class="n">srcdata</span><span class="p">[</span><span class="s1">&#39;h&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tail</span><span class="o">.</span><span class="n">srcfeat</span><span class="p">()</span>
+<span class="c1"># Perform computations</span>
+<span class="n">emb</span> <span class="o">=</span> <span class="n">tg</span><span class="o">.</span><span class="n">op</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this tutorial, you learned about TBlock, a key component of the TGLite framework. TBlocks provide a powerful mechanism for capturing and analyzing message-flow dependencies in a continuous-time dynamic graph. By understanding the design choices and features of TBlock, you can effectively leverage its capabilities within your applications.</p>
+<p>For more details and advanced usage, refer to the <a class="reference internal" href="../api/python/tglite.block.html#api-block"><span class="std std-ref">TBlock</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../api/python/tglite.html" class="btn btn-neutral float-right" title="tglite" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ADAPT Group.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

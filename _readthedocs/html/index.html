@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to TGLite’s documentation! &mdash; TGLite 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Started" href="install/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            TGLite
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">TGLite</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/tblock.html">How does TBlock work?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.html">tglite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.batch.html">tglite.TBatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.block.html">tglite.TBlock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.context.html">tglite.TContext</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.graph.html">tglite.TGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.sampler.html">tglite.TSampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/tglite.Mailbox.html">tglite.Mailbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/tglite.Memory.html">tglite.Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.nn.html">tglite.nn</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">TGLite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to TGLite’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ADAPT-uiuc/tglite/blob/main/docs/source/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-tglite-s-documentation">
+<h1>Welcome to TGLite’s documentation!<a class="headerlink" href="#welcome-to-tglite-s-documentation" title="Permalink to this heading"></a></h1>
+<p><strong>TGLite</strong> is a lightweight framework that provides core abstractions and building blocks for practitioners and researchers to implement efficient TGNN models. <em>TGNNs</em>, or <em>Temporal Graph Neural Networks</em>, learn node embeddings for graphs that dynamically change over time by jointly aggregating structural and temporal information from neighboring nodes.</p>
+<p>TGLite employs an abstraction called a <a class="reference internal" href="api/python/tglite.block.html#api-block"><span class="std std-ref">TBlock</span></a> to represent the temporal graph dependencies when aggregating from neighbors, with explicit support for capturing temporal details like edge timestamps, as well as composable operators and optimizations. Compared to prior art, TGLite can outperform the <a class="reference external" href="https://github.com/amazon-science/tgl">TGL</a> framework by up to <em>3x</em> in terms of training time.</p>
+<figure class="align-center" id="id1" style="width: 85%">
+<span id="train-figure"></span><img alt="End-to-end training epoch time comparison on an Nvidia A100 GPU" src="_images/train.png" />
+<figcaption>
+<p><span class="caption-text">End-to-end training epoch time comparison on an Nvidia A100 GPU</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="install-tglite">
+<h2>Install TGLite<a class="headerlink" href="#install-tglite" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference internal" href="install/index.html#getting-started"><span class="std std-ref">Getting started</span></a> for instructions on how to install the TGLite binaries. To install from source or for local development, refer to <a class="reference internal" href="install/index.html#build-from-source"><span class="std std-ref">Building from source</span></a> and <a class="reference internal" href="install/index.html#development-mode"><span class="std std-ref">Development mode</span></a>.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this heading"></a></h2>
+<p>We provide a set of tutorials to help you get started with TGLite. These tutorials cover the basics of using TGLite, as well as more advanced topics.</p>
+<ol class="arabic simple" start="0">
+<li><p><a class="reference internal" href="tutorial/quickstart.html"><span class="doc">Quickstart</span></a>: A step-by-step guide to train a TGNN model using TGLite.</p></li>
+<li><p><a class="reference internal" href="tutorial/tblock.html#tutorial-tblock"><span class="std std-ref">How does TBlock work?</span></a>: A tutorial on how to use the TBlock abstraction to implement TGNN models.</p></li>
+</ol>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.html">tglite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.html#edge-iterate-ops">Edge Iterate Ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.html#create-graph-ops">Create Graph Ops</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.batch.html">tglite.TBatch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.batch.html#tglite.TBatch"><code class="docutils literal notranslate"><span class="pre">TBatch</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.batch.html#get-graph-data">Get graph data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.batch.html#get-tblock">Get TBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.batch.html#split-data">Split data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.block.html">tglite.TBlock</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#tglite.TBlock"><code class="docutils literal notranslate"><span class="pre">TBlock</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#query-tblock-attributes">Query TBlock attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#query-neighbor-attributes">Query neighbor attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#query-data">Query data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#query-cache">Query Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#neighbor-ops">Neighbor ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#linked-list-ops">Linked list ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.block.html#execution-ops">Execution ops</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.context.html">tglite.TContext</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.context.html#tglite.TContext"><code class="docutils literal notranslate"><span class="pre">TContext</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.context.html#basic-settings">Basic settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.context.html#set-node-embedding-cache">Set node embedding cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.context.html#set-time-precomputation">Set time precomputation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.context.html#query-graph">Query graph</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.graph.html">tglite.TGraph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.graph.html#tglite.TGraph"><code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.graph.html#query-graph-structure">Query graph structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.graph.html#query-graph-data">Query graph data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.graph.html#query-memory-based-tgn-data">Query memory-based TGN data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.graph.html#set-device">Set device</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.sampler.html">tglite.TSampler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.sampler.html#tglite.TSampler"><code class="docutils literal notranslate"><span class="pre">TSampler</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="generated/tglite.Mailbox.html">tglite.Mailbox</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/tglite.Mailbox.html#tglite.Mailbox"><code class="docutils literal notranslate"><span class="pre">Mailbox</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="generated/tglite.Memory.html">tglite.Memory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/tglite.Memory.html#tglite.Memory"><code class="docutils literal notranslate"><span class="pre">Memory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/python/tglite.nn.html">tglite.nn</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.nn.html#tglite.nn.TimeEncode"><code class="docutils literal notranslate"><span class="pre">TimeEncode</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/tglite.nn.html#tglite.nn.TemporalAttnLayer"><code class="docutils literal notranslate"><span class="pre">TemporalAttnLayer</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This project is under active development.</p>
+</div>
+</section>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install/index.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ADAPT Group.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
