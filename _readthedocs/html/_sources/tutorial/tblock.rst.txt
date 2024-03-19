@@ -1,4 +1,4 @@
-.. _tblock_tutorial:
+.. _tutorial-tblock:
 
 How does TBlock work?
 =====================
@@ -85,4 +85,4 @@ Here's an example code snippet demonstrating the usage of TBlock:
 
 In this tutorial, you learned about TBlock, a key component of the TGLite framework. TBlocks provide a powerful mechanism for capturing and analyzing message-flow dependencies in a continuous-time dynamic graph. By understanding the design choices and features of TBlock, you can effectively leverage its capabilities within your applications.
 
-For more details and advanced usage, refer to the :ref: `TBlock <api-block>`.
+For more details and advanced usage, refer to the :ref:`TBlock <api-block>`.

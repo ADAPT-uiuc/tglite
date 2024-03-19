@@ -5,7 +5,7 @@ tglite.TBlock
 
 TBlock captures 1-hop relationships between node/time pairs and their neighbors for doing computations. :ref:`Figure
 <tblock figure>` shows the internal structure of a TBlock and the doubly-linked list design with next and prev pointing
-to sampled neighbors' TBlock. To learn more about how to use TBlock, please refer to the :ref:`tutorial <tutorial-tblock>`.
+to sampled neighbors' TBlock. To have a general idea of how TBlock works, please refer to the :ref:`tutorial <tutorial-tblock>`.
 
 .. _tblock figure:
 .. figure:: ../../img/tblock-structure.png

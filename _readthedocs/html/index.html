@@ -85,7 +85,7 @@
               <p class="caption" role="heading"><span class="caption-text">TGLite</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial/tgat.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/tblock.html">How does TBlock work?</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API</span></p>
@@ -150,7 +150,9 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            
+              <a href="https://github.com/ADAPT-uiuc/tglite/blob/main/docs/source/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
           
         
       </li>
@@ -166,7 +168,7 @@
   <section id="welcome-to-tglite-s-documentation">
 <h1>Welcome to TGLite’s documentation!<a class="headerlink" href="#welcome-to-tglite-s-documentation" title="Permalink to this heading">¶</a></h1>
 <p><strong>TGlite</strong> is a lightweight framework that provides core abstractions and building blocks for practitioners and researchers to implement efficient TGNN models. <em>TGNNs</em>, or <em>Temporal Graph Neural Networks</em>, learn node embeddings for graphs that dynamically change over time by jointly aggregating structural and temporal information from neighboring nodes.</p>
-<p>TGLite employs an abstraction called a <cite>TBlock</cite> to represent the temporal graph dependencies when aggregating from neighbors, with explicit support for capturing temporal details like edge timestamps, as well as composable operators and optimizations. Compared to prior art, TGLite can outperform the <a class="reference external" href="https://github.com/amazon-science/tgl">TGL</a> framework by up to <a class="reference external" href="some-url">3x</a> in terms of training time.</p>
+<p>TGLite employs an abstraction called a <a class="reference internal" href="api/python/tglite.block.html#api-block"><span class="std std-ref">TBlock</span></a> to represent the temporal graph dependencies when aggregating from neighbors, with explicit support for capturing temporal details like edge timestamps, as well as composable operators and optimizations. Compared to prior art, TGLite can outperform the <a class="reference external" href="https://github.com/amazon-science/tgl">TGL</a> framework by up to <em>3x</em> in terms of training time.</p>
 <figure class="align-center" id="id1" style="width: 85%">
 <span id="train-figure"></span><img alt="End-to-end training epoch time comparison on an Nvidia A100 GPU" src="_images/train.png" />
 <figcaption>
@@ -181,8 +183,8 @@
 <h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this heading">¶</a></h2>
 <p>We provide a set of tutorials to help you get started with TGLite. These tutorials cover the basics of using TGLite, as well as more advanced topics.</p>
 <ol class="arabic simple" start="0">
-<li><p><a class="reference internal" href="tutorial/tgat.html"><span class="doc">Quickstart</span></a>: A step-by-step guide to train a TGNN model using TGLite.</p></li>
-<li><p><a class="reference internal" href="tutorial/tblock.html#tblock-tutorial"><span class="std std-ref">How does TBlock work?</span></a>: A tutorial on how to use the TBlock abstraction to implement TGNN models.</p></li>
+<li><p><a class="reference internal" href="tutorial/quickstart.html"><span class="doc">Quickstart</span></a>: A step-by-step guide to train a TGNN model using TGLite.</p></li>
+<li><p><a class="reference internal" href="tutorial/tblock.html#tutorial-tblock"><span class="std std-ref">How does TBlock work?</span></a>: A tutorial on how to use the TBlock abstraction to implement TGNN models.</p></li>
 </ol>
 <div class="toctree-wrapper compound">
 </div>
