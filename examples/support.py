@@ -119,7 +119,7 @@ class LinkPredTrainer(object):
                  train_end: int, val_end: int,
                  model_path: str, model_mem_path: Optional[str]):
         self.ctx = ctx
-        self.g = ctx.graph()
+        self.g = ctx.graph
         self.model = model
         self.criterion = criterion
         self.optimizer = optimizer

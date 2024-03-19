@@ -33,7 +33,7 @@ class TBlock(object):
         """
 
         self._ctx = ctx
-        self._g = ctx.graph()
+        self._g = ctx.graph
         self._layer = layer
         self._dstnodes = dstnodes
         self._dsttimes = dsttimes
