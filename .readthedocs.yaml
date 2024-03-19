@@ -8,10 +8,16 @@ version: 2
 build:
   os: ubuntu-20.04
   tools:
-    python: "mambaforge-22.9"
-    # python: "3.8"
+    # python: "mambaforge-22.9"
+    python: "3.7"
 
   # commands:
+    - pip install torch==1.12.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
+    - pip install torch-scatter==2.1.0+pt112cu116 -f https://data.pyg.org/whl/torch-1.12.1+cu116.html
+    - pip install .[docs]
+    - cd docs/ && make html
+    - mkdir _readthedocs
+    - cp -r docs/build/html _readthedocs/
     # - python setup.py install
     # Install dependencies
     # - cd docs/ && pip install -r requirements.txt
@@ -24,12 +30,12 @@ build:
     # - cp --recursive docs/build/html _readthedocs/
     # - ls _readthedocs
 
-conda:
-  environment: environment.yml
+# conda:
+#   environment: environment.yml
 
 # Build documentation in the "docs/" directory with Sphinx
-sphinx:
-  configuration: null
+# sphinx:
+#   configuration: null
   # You can configure Sphinx to use a different builder, for instance use the dirhtml builder for simpler URLs
   # builder: "dirhtml"
   # Fail on all warnings to avoid broken references
@@ -43,9 +49,9 @@ sphinx:
 # Optional but recommended, declare the Python requirements required
 # to build your documentation
 # See https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html
-python:
-  install:
-    - method: pip
-      path: .
-      extra_requirements:
-        - docs
+# python:
+#   install:
+#     - method: pip
+#       path: .
+#       extra_requirements:
+#         - docs
