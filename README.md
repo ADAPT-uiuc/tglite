@@ -57,7 +57,7 @@ The example model is defined to first construct the graph dependencies for nodes
 
 ## Publication
 
-* Yufeng Wang and Charith Mendis. 2024. [TGLite: A Lightweight Programming Framework for Continuous-Time Temporal Graph Neural Networks][tglite-paper]. In 29th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 2 (ASPLOS '24), April 2024, La Jolla, CA, USA.
+* Yufeng Wang and Charith Mendis. 2024. [TGLite: A Lightweight Programming Framework for Continuous-Time Temporal Graph Neural Networks][tglite-paper]. In 29th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 2 (ASPLOS '24), April 2024, La Jolla, CA, USA. (To Appear)
 
 * Yufeng Wang and Charith Mendis. 2023. [TGOpt: Redundancy-Aware Optimizations for Temporal Graph Attention Networks][tgopt-paper]. In Proceedings of the 28th ACM SIGPLAN Annual Symposium on Principles and Practice of Parallel Programming (PPoPP '23), February 2023, Montreal, QC, Canada.
 
@@ -73,5 +73,5 @@ If you find TGLite useful, please consider attributing to the following citation
 }
 ```
 
-[tglite-paper]: https://doi.org/10.1145/3620665.3640414
-[tgopt-paper]: https://doi.org/10.1145/3572848.3577490
+[tglite-paper]: https://charithmendis.com/assets/pdf/asplos24-tglite.pdf
+[tgopt-paper]: https://charithmendis.com/assets/pdf/ppopp23-tgopt.pdf
