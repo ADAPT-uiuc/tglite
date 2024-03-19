@@ -2,5 +2,6 @@ channels:
 - conda-forge
 - defaults
 dependencies:
+- pandoc
 - pip:
   - torch==1.12.1
