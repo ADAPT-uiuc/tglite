@@ -1,7 +1,7 @@
 [project]
 name = "tglite"
 # dynamic = ["version"]
-version = "0.1.0"
+version = "0.0.4"
 description = "Temporal GNN Lightweight Framework"
 readme = "README.md"
 license = {file = "LICENSE"}

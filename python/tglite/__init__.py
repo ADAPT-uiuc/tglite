@@ -4,10 +4,11 @@ tglite: Temporal GNN Lightweight Framework
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
+__version__ = "0.0.4"
 
 ### Re-exports
 
+import torch
 from ._graph import TGraph, from_csv
 from ._batch import TBatch
 from ._block import TBlock

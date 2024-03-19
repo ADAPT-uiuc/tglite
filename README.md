@@ -3,7 +3,7 @@
 TGLite is a lightweight framework that provides core abstractions and building blocks for practitioners and researchers to implement efficient TGNN models. TGNNs, or Temporal Graph Neural Networks, learn node embeddings for graphs that dynamically change over time by jointly aggregating structural and temporal information from neighboring nodes. TGLite employs an abstraction called a _TBlock_ to represent the temporal graph dependencies when aggregating from neighbors, with explicit support for capturing temporal details like edge timestamps, as well as composable operators and optimizations. Compared to prior art, TGLite can outperform the [TGL][tgl] framework by [up to 3x](#publication) in terms of training time.
 
 <div align="center">
-  <img src="docs/source/img/train.png">
+  <img src="https://raw.githubusercontent.com/ADAPT-uiuc/tglite/main/docs/source/img/train.png">
   End-to-end training epoch time comparison on an Nvidia A100 GPU.
 </div>
 
