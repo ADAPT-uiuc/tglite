@@ -11,11 +11,11 @@ TGLite is a lightweight framework that provides core abstractions and building b
 
 ## Installation
 
-See our [documentation][docs] for instructions on how to install the TGLite binaries, as well as examples and references for supported functionality. To install from source or for local development, go to the [Building from source](build_src) session, it also explains how to run [examples](exp).
+See our [documentation][docs] for instructions on how to install the TGLite package, as well as examples and references for supported functionality. To install from source or for local development, go to the [Building from source][build-src] section, it also explains how to run [examples][exp].
 
-[docs]: tglite.rtfd.io
-[build_src]: docs/install/from_source.md
-[exp]: https://github.com/ADAPT-uiuc/tglite/tree/main/examples
+[docs]: https://tglite.readthedocs.io
+[build-src]: https://tglite.readthedocs.io/en/latest/install/index.html#building-from-source
+[exp]: examples
 
 ## Getting Started
 
